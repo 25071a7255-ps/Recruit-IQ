@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HindsightHire India — job search that remembers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EFF4F2;--sf:#FFFFFF;--sf2:#E6EEEB;--tx:#10211F;--mu:#587069;--ln:#D2DED9;--pr:#0E5C56;--prh:#0A4743;--on:#FFFFFF;--hb:#0B4A45;--ht:#EAF7F4;--hs:#F3AE00;--hsbg:#FFF3CC;--gr:#17834F;--grbg:#DDF3E7;--rd:#C4402F;--rdbg:#FCE5E0;--vi:#6B4FC8;
+--fd:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--fb:'Figtree','Segoe UI',system-ui,-apple-system,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1412;--sf:#12201D;--sf2:#1A2C28;--tx:#E6F0ED;--mu:#93AAA4;--ln:#25393A;--pr:#3FC2B4;--prh:#63D6CA;--on:#062522;--hb:#0F3B37;--ht:#E6F5F2;--hs:#FFC93C;--hsbg:#332A0B;--gr:#4CD38C;--grbg:#12362A;--rd:#FF8A78;--rdbg:#3A1B17;--vi:#B3A5FF}}
+:root[data-theme="dark"]{--bg:#0A1412;--sf:#12201D;--sf2:#1A2C28;--tx:#E6F0ED;--mu:#93AAA4;--ln:#25393A;--pr:#3FC2B4;--prh:#63D6CA;--on:#062522;--hb:#0F3B37;--ht:#E6F5F2;--hs:#FFC93C;--hsbg:#332A0B;--gr:#4CD38C;--grbg:#12362A;--rd:#FF8A78;--rdbg:#3A1B17;--vi:#B3A5FF}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 var(--fb);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fd);margin:0;letter-spacing:-.01em;line-height:1.15}
+h2{font-size:20px}h3{font-size:16px}h4{font-size:14px;margin:16px 0 6px}
+p{margin:0}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid var(--hs);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--pr);color:var(--on);padding:8px 12px;border-radius:8px;z-index:99}.skip:focus{left:8px}
+.mu{color:var(--mu)}.sm{font-size:13px}.xs{font-size:12px}.b700{font-weight:700}
+mark{background:var(--hs);color:#2b2000;border-radius:3px;padding:0 2px}
+
+/* header + nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--sf);border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:14px;padding:10px clamp(12px,3vw,28px)}
+.logo{display:flex;align-items:center;gap:10px;font:800 19px var(--fd);letter-spacing:-.02em;white-space:nowrap}
+.logo i{width:32px;height:32px;border-radius:9px;background:var(--hb);display:grid;place-items:center}
+.logo svg{width:20px;height:20px;stroke:var(--hs);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.logo small{font:600 12px var(--fb);color:var(--mu);letter-spacing:0;margin-left:-4px}
+.top nav{display:flex;gap:4px;margin:0 auto}
+.top nav button{display:flex;align-items:center;gap:8px;border:0;background:none;padding:8px 14px;border-radius:999px;color:var(--mu);font-weight:600}
+.top nav button:hover{background:var(--sf2);color:var(--tx)}
+.top nav button.on{background:var(--pr);color:var(--on)}
+.top nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ib{width:38px;height:38px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);display:grid;place-items:center;padding:0}
+.ib svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+@media(max-width:760px){
+ .top nav{position:fixed;left:0;right:0;bottom:0;margin:0;gap:0;background:var(--sf);border-top:1px solid var(--ln);display:grid;grid-template-columns:repeat(4,1fr);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:30}
+ .top nav button{flex-direction:column;gap:2px;font-size:11px;padding:6px 0;border-radius:12px}
+ .top nav button.on{background:var(--sf2);color:var(--pr)}
+ .logo{margin-right:auto}main{padding-bottom:96px!important}
+}
+
+main{max-width:1240px;margin:0 auto;padding:18px clamp(12px,3vw,28px) 48px}
+.pg{display:none}.pg.on{display:block}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--hb);color:var(--ht);border-radius:24px;padding:clamp(22px,4vw,46px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:30px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.3rem,5.2vw,3.9rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.hero .lead{margin:14px 0 20px;max-width:520px;color:color-mix(in srgb,var(--ht) 82%,transparent);font-size:16px}
+.hero .srch{display:flex;gap:8px;flex-wrap:wrap}.hero .srch .in{flex:1 1 200px;border:0;min-height:48px;font-size:16px}
+.hero .srch select{flex:0 1 160px}
+.hero .qk{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.hero .qk button{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:var(--ht);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+.hero .qk button:hover{background:rgba(255,255,255,.18)}
+.hero .stl{margin-top:18px;font-size:13px;color:color-mix(in srgb,var(--ht) 70%,transparent)}
+.thread{position:absolute;right:-30px;bottom:-40px;width:78%;pointer-events:none}
+.thread path{fill:none;stroke:var(--hs);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;animation:draw 2.2s cubic-bezier(.5,0,.2,1) both}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.brief{position:relative;z-index:1;background:var(--sf);color:var(--tx);border-radius:18px;padding:18px 18px 12px;align-self:start}
+.brief h2{font-size:18px;margin-bottom:2px}
+.bi{display:flex;gap:11px;padding:11px 0;border-top:1px solid var(--ln);font-size:14px}.bi:first-of-type{border-top:0}
+.bi .dot{flex:none;width:10px;height:10px;border-radius:50%;margin-top:6px;background:var(--hs)}.dot.up{background:var(--gr)}.dot.dn{background:var(--rd)}
+.ba{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.thread{width:100%;opacity:.5}}
+
+/* generic */
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:18px;margin-bottom:16px}
+.card>h2+p{margin:4px 0 12px}
+.in{width:100%;background:var(--sf);color:var(--tx);border:1px solid var(--ln);border-radius:10px;padding:10px 12px;min-height:42px}
+.in:focus{border-color:var(--pr);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--pr) 25%,transparent)}
+textarea.in{resize:vertical}
+label.f{display:block;font-size:13px;font-weight:600;margin:0 0 4px;color:var(--mu)}
+.fld{margin-bottom:12px}
+.b{border:0;border-radius:10px;padding:9px 15px;font-weight:700;background:var(--pr);color:var(--on);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.b:hover{background:var(--prh)}.b.s{background:var(--sf2);color:var(--tx)}.b.s:hover{background:var(--ln)}.b.g{background:none;border:1px solid var(--ln);color:var(--tx)}.b.sm{padding:5px 11px;font-size:13px;border-radius:8px}
+.b.dg{background:var(--rd);color:#fff}
+.chip{border:1px solid var(--ln);background:var(--sf);border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600;color:var(--tx)}
+.chip:hover{border-color:var(--pr)}.chip[aria-pressed="true"]{background:var(--pr);border-color:var(--pr);color:var(--on)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.tg{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--sf2);margin:0 4px 4px 0}
+.tg.own{background:var(--grbg);color:var(--gr)}.tg.miss{background:none;border:1px dashed var(--rd);color:var(--rd)}.tg.te{background:none;border:1px solid var(--ln);color:var(--mu);font-weight:500}
+.tg.k-co{background:color-mix(in srgb,var(--pr) 16%,transparent);color:var(--pr)}.tg.k-sk{background:var(--hsbg);color:var(--tx)}.tg.k-ro{background:color-mix(in srgb,var(--vi) 16%,transparent);color:var(--vi)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:12px}
+.pill::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tc,var(--mu))}
+.t-Applied{--tc:var(--pr)}.t-Interview{--tc:var(--hs)}.t-Offer{--tc:var(--gr)}.t-Rejected{--tc:var(--rd)}.t-Ghosted{--tc:var(--mu)}.t-Insight{--tc:var(--vi)}
+.bar{height:8px;background:var(--sf2);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--pr);border-radius:9px}
+.empty{padding:26px;text-align:center;color:var(--mu);border:1px dashed var(--ln);border-radius:14px}
+.mono{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font:700 18px var(--fd);color:#fff;background:hsl(var(--h),42%,34%);flex:none}
+.ring{--p:0;--c:var(--gr);width:54px;height:54px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--sf2) 0);display:grid;place-items:center;position:relative;flex:none}
+.ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--sf)}.ring b{position:relative;font:700 15px var(--fd)}
+.ring.lg{width:76px;height:76px}.ring.lg::before{inset:7px}.ring.lg b{font-size:21px}
+
+/* jobs layout */
+.lay{display:grid;grid-template-columns:292px minmax(0,1fr);gap:18px;align-items:start}
+.filters{position:sticky;top:calc(env(safe-area-inset-top,0px) + 72px);max-height:calc(100vh - 92px);overflow:auto;padding:16px}
+.filters h3{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.g2c{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.skbox{max-height:210px;overflow:auto;padding:2px}
+.fbtn{display:none}
+@media(max-width:960px){.lay{grid-template-columns:1fr}.filters{position:static;max-height:none;display:none}.filters.open{display:block}.fbtn{display:inline-flex}}
+.tool{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.tool .in{width:auto;min-width:170px}
+.tool .cnt{flex:1;font-size:14px;color:var(--mu);min-width:200px}
+.fams{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;margin-bottom:4px;scrollbar-width:thin}.fams .chip{white-space:nowrap}
+
+.job{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:16px;margin-bottom:12px;transition:border-color .15s}
+.job:hover{border-color:var(--pr)}
+.jt{display:flex;gap:12px;align-items:flex-start}.jm{flex:1;min-width:0}
+.jm h3 button{border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;letter-spacing:inherit}.jm h3 button:hover{color:var(--pr);text-decoration:underline}
+.co{font-size:14px;font-weight:600}.co span{font-weight:400;color:var(--mu)}
+.mr{text-align:center;flex:none}.dl{display:block;font-size:11px;font-weight:700;margin-top:2px}.dl.up{color:var(--gr)}.dl.dn{color:var(--rd)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 8px;font-size:13px}.meta span{background:var(--sf2);border-radius:7px;padding:2px 8px}.meta b{background:none;padding:0;color:var(--gr)}
+.nt{display:flex;gap:9px;align-items:flex-start;margin-top:6px;padding:9px 11px;border-radius:10px;font-size:13px;background:var(--hsbg);border-left:4px solid var(--hs)}
+.nt.bad{background:var(--rdbg);border-color:var(--rd)}.nt.good{background:var(--grbg);border-color:var(--gr)}
+.nt svg{flex:none;width:16px;height:16px;margin-top:2px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.nt.bad svg{color:var(--rd)}.nt.good svg{color:var(--gr)}.nt.n svg{color:var(--hs)}
+.acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(6,14,12,.6);display:none;place-items:center;z-index:50;padding:16px}.modal.on{display:grid}
+.mb{background:var(--sf);border-radius:20px;padding:24px;max-width:720px;width:100%;max-height:90vh;overflow:auto;position:relative}.mb:focus{outline:none}
+.x{position:absolute;right:12px;top:10px;border:0;background:none;font-size:28px;line-height:1;color:var(--mu);width:40px;height:40px;border-radius:50%}.x:hover{background:var(--sf2)}
+.mh{display:flex;gap:14px;align-items:center;margin-bottom:12px;padding-right:36px}.mh div:nth-child(2){flex:1;min-width:0}
+table{width:100%;border-collapse:collapse}td,th{padding:8px 6px;border-bottom:1px solid var(--ln);text-align:left;font-size:14px}th{color:var(--mu);font-weight:600;width:22%}
+ul.rs{margin:4px 0;padding-left:18px;font-size:14px;line-height:1.7}
+.bd{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--ln);font-size:14px}.bd b.up{color:var(--gr)}.bd b.dn{color:var(--rd)}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--tx);color:var(--bg);padding:11px 16px;border-radius:12px;display:none;z-index:60;font-weight:600;max-width:90vw;text-align:center}
+@media(min-width:761px){#toast{bottom:calc(24px + env(safe-area-inset-bottom,0px))}}
+
+/* companies + market */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.cg .card{margin:0;display:flex;flex-direction:column;gap:8px}
+.br{display:block;width:100%;border:0;background:none;text-align:left;padding:7px 8px;border-radius:10px}.br:hover{background:var(--sf2)}
+.br .t{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:4px}
+.mg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}@media(max-width:900px){.mg{grid-template-columns:1fr}}
+.stk{display:flex;height:16px;border-radius:9px;overflow:hidden;margin:8px 0}.stk i{display:block}
+
+/* memory */
+.mgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:960px){.mgrid{display:block}}
+.mh1{margin:6px 0 16px}.mh1 h2{font-size:clamp(24px,3vw,32px)}
+.det{min-height:28px;margin-top:8px}
+.rc{border:1px solid var(--ln);border-radius:12px;padding:12px;margin-bottom:8px}
+.rc .rt{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:4px}
+.sum{background:var(--hsbg);border-left:4px solid var(--hs);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:14px}
+.tl{position:relative;padding-left:24px}.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(var(--hs),var(--ln))}
+.ev{position:relative;padding:0 0 16px}.ev::before{content:"";position:absolute;left:-24px;top:4px;width:15px;height:15px;border-radius:50%;background:var(--sf);border:4px solid var(--tc,var(--mu))}
+.ev .eh{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:2px}.ev p{font-size:14px}
+.ev .ea{margin-left:auto;display:flex;gap:4px}
+.fnl{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}.fnl div{background:var(--sf2);border-radius:12px;padding:10px 6px;text-align:center}.fnl b{display:block;font:700 22px var(--fd)}.fnl span{font-size:12px;color:var(--mu)}
+.ap{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 0;border-top:1px solid var(--ln);font-size:14px}.ap:first-of-type{border-top:0}.ap>div{min-width:0}
+.rf{border-radius:12px;padding:12px 14px;margin-bottom:10px;background:var(--sf2);border-left:4px solid var(--hs);font-size:14px}
+.rf.warn{border-color:var(--rd);background:var(--rdbg)}.rf.good{border-color:var(--gr);background:var(--grbg)}.rf b.h{display:block;margin-bottom:2px}
+.rf .ba{margin-top:8px}
+.nx{display:flex;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--ln);font-size:14px}.nx>div{flex:1;min-width:0}
+.foot{margin-top:24px;font-size:13px;color:var(--mu);max-width:820px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+ <div class="logo"><i><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2"/></svg></i>HindsightHire <small>India</small></div>
+ <nav id="nav" aria-label="Main"></nav>
+ <button class="ib" id="th" aria-label="Switch light or dark theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+</header>
+
+<main id="main">
+<!-- VACANCIES -->
+<section class="pg on" id="pg-jobs">
+ <div class="hero">
+  <div>
+   <h1>Job hunting with a memory.</h1>
+   <p class="lead">Search vacancies across India in every field. Log each application, interview and silence, and every job is re-scored using what already happened to you.</p>
+   <div class="srch"><input class="in" id="q" placeholder="Role, skill or company" aria-label="Search role, skill or company" autocomplete="off"><select class="in" id="loc" aria-label="City"><option value="">Any city</option></select></div>
+   <div class="qk" id="qk"></div>
+   <div class="stl" id="stl"></div>
+  </div>
+  <div class="brief" id="brief"></div>
+  <svg class="thread" viewBox="0 0 520 260" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path pathLength="1" d="M0 215 C90 215 120 120 200 130 C290 142 280 252 200 240 C130 230 160 130 262 92 C340 62 430 96 520 40"/></svg>
+ </div>
+
+ <div class="lay">
+  <aside class="card filters" id="filters" aria-label="Filters">
+   <h3>Filters <button class="b sm g" id="clr">Clear all</button></h3>
+   <div class="fld"><label class="f" for="fco">Company</label><input class="in" id="fco" placeholder="e.g. Infosys"></div>
+   <div class="fld"><label class="f" for="sec">Sector</label><select class="in" id="sec"><option value="">Any sector</option></select></div>
+   <div class="g2c fld"><div><label class="f" for="fsk">Skill</label><input class="in" id="fsk" placeholder="SQL"></div><div><label class="f" for="fte">Technology</label><input class="in" id="fte" placeholder="AWS"></div></div>
+   <div class="g2c fld"><div><label class="f" for="mode">Work mode</label><select class="in" id="mode"><option value="">Any</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></div>
+    <div><label class="f" for="exp">Experience</label><select class="in" id="exp"><option value="">Any</option><option>0-1 years</option><option>1-3 years</option><option>3-5 years</option></select></div></div>
+   <div class="g2c fld"><div><label class="f" for="typ">Job type</label><select class="in" id="typ"><option value="">Any</option><option>Full-time</option><option>Internship</option></select></div>
+    <div><label class="f" for="sal">Salary</label><select class="in" id="sal"><option value="">Any</option><option value="4">₹4 LPA+</option><option value="8">₹8 LPA+</option><option value="15">₹15 LPA+</option><option value="25">₹25 LPA+</option></select></div></div>
+   <h3 style="margin:18px 0 4px">Your skills</h3>
+   <p class="mu sm" style="margin-bottom:8px">Pick a starting profile, then add or remove skills. Match scores update instantly.</p>
+   <div class="chips" id="presets" style="margin-bottom:10px"></div>
+   <div class="fld"><input class="in" id="sks" placeholder="Search skills to add" aria-label="Search skills"></div>
+   <div id="skmine" class="chips" style="margin-bottom:8px"></div>
+   <div id="skall" class="chips skbox"></div>
+  </aside>
+
+  <div id="res">
+   <div class="fams" id="fams" role="group" aria-label="Role families"></div>
+   <div class="tool">
+    <button class="b s fbtn" id="fbtn">Filters</button>
+    <div class="cnt" id="cnt" aria-live="polite"></div>
+    <label class="f" for="sort" style="margin:0">Sort</label>
+    <select class="in" id="sort"><option value="fit">Best for you</option><option value="m">Skill match only</option><option value="n">Newest</option><option value="s">Highest salary</option><option value="o">Most openings</option></select>
+   </div>
+   <div id="list"></div>
+   <div style="text-align:center"><button class="b s" id="more" style="display:none">Show more vacancies</button></div>
+  </div>
+ </div>
+</section>
+
+<!-- COMPANIES -->
+<section class="pg" id="pg-cos">
+ <div class="mh1"><h2>Companies hiring in India</h2><p class="mu" id="conote"></p></div>
+ <div class="card"><div class="g2c" style="grid-template-columns:2fr 1fr 1fr;gap:10px"><input class="in" id="cq" placeholder="Search company" aria-label="Search company"><select class="in" id="cs" aria-label="Sector"><option value="">All sectors</option></select><select class="in" id="cso" aria-label="Sort companies"><option value="o">Most openings</option><option value="n">Name A–Z</option><option value="m">Your history first</option></select></div></div>
+ <div class="cg" id="cg"></div>
+</section>
+
+<!-- MARKET -->
+<section class="pg" id="pg-mkt">
+ <div class="mh1"><h2>Hiring market</h2><p class="mu">Tap any row to see the matching vacancies. Figures come from the sample dataset.</p></div>
+ <div class="mg"><div class="card"><h2>Role families</h2><p class="mu sm">Openings by field</p><div id="mfam"></div></div>
+  <div class="card"><h2>Typical pay by family</h2><p class="mu sm">Average of salary ranges, full-time roles</p><div id="mpay"></div>
+   <h4>Work mode</h4><div id="mmode"></div></div></div>
+ <div class="mg"><div class="card"><h2>Skill demand</h2><div id="msk"></div></div><div class="card"><h2>Technology demand</h2><div id="mte"></div></div></div>
+ <div class="mg"><div class="card"><h2>Cities</h2><div id="mci"></div></div><div class="card"><h2>Sectors</h2><div id="mse"></div></div></div>
+</section>
+
+<!-- MEMORY -->
+<section class="pg" id="pg-mem">
+ <div class="mh1"><h2>Hindsight memory</h2><p class="mu" style="max-width:720px">Retain what happens, recall it in plain words, and reflect to spot patterns. Memories sharpen the fit score on every vacancy. Everything runs in your browser.</p></div>
+ <div class="mgrid">
+  <div class="mcol">
+   <div class="card" id="c-ret"><h2 id="rtitle">Retain</h2><p class="mu sm">Write it the way you'd tell a friend. Companies, skills and roles are picked out automatically.</p>
+    <div class="chips" id="tpl" style="margin-bottom:12px"></div>
+    <div class="g2c" style="margin-bottom:10px"><div><label class="f" for="mt">What happened</label><select class="in" id="mt"></select></div><div><label class="f" for="md2">When</label><input class="in" type="date" id="md2"></div></div>
+    <label class="f" for="mx">Details</label><textarea class="in" id="mx" rows="3" placeholder="e.g. Rejected by Infosys after round 2. They wanted Java and I only had Python."></textarea>
+    <div class="det chips" id="det" aria-live="polite"></div>
+    <div class="acts"><button class="b" id="rt">Retain memory</button><button class="b g" id="rcancel" style="display:none">Cancel edit</button></div></div>
+   <div class="card" id="c-rec"><h2>Recall</h2><p class="mu sm">Ask in plain words. Try a company, a skill, an outcome or a time like "last week".</p>
+    <div class="g2c" style="grid-template-columns:1fr auto;margin-bottom:8px"><input class="in" id="rq" placeholder="Why was I rejected?" aria-label="Ask your memory" autocomplete="off"><button class="b" id="rc">Recall</button></div>
+    <div class="chips" id="rex" style="margin-bottom:12px"></div><div id="rout"></div></div>
+   <div class="card" id="c-tl"><h2>Timeline</h2>
+    <div class="chips" id="tlf" style="margin:10px 0"></div><div class="tl" id="tl"></div><div style="text-align:center;margin-top:8px"><button class="b s sm" id="tlmore" style="display:none">Show older</button></div></div>
+  </div>
+  <div class="mcol">
+   <div class="card" id="c-ref"><h2>Reflect</h2><p class="mu sm">Patterns found across your memories and the job market.</p><div id="ref"></div></div>
+   <div class="card" id="c-pipe"><h2>Application tracker</h2><div id="pipe"></div></div>
+   <div class="card" id="c-data"><h2>Your data</h2><p class="mu sm" id="sto"></p>
+    <div class="acts" style="margin-top:8px"><button class="b s sm" id="exp2">Export / import</button><button class="b s sm" id="rst">Reset demo data</button><button class="b g sm" id="clrm">Delete all memories</button></div></div>
+  </div>
+ </div>
+</section>
+<p class="foot" id="foot"></p>
+</main>
+
+<div class="modal" id="md" role="dialog" aria-modal="true" aria-labelledby="mtl"><div class="mb" tabindex="-1"><button class="x" data-close aria-label="Close">×</button><div id="mbody"></div></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ CORE: data + memory engine (no DOM access) ============ -->
+<script id="core">
+'use strict';
+const DAY=864e5,clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),
+esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
+H=s=>{let a=7;for(let i=0;i<s.length;i++)a=(Math.imul(a,31)+s.charCodeAt(i))>>>0;return a},
+trim=(s,n)=>s.length>n?s.slice(0,n-1).trimEnd()+'…':s;
+
+/* storage with in-memory fallback (works even when localStorage is blocked) */
+const store=(()=>{let ok=true;const mem={};try{localStorage.setItem('__hh','1');localStorage.removeItem('__hh')}catch(e){ok=false}
+ return{persistent:()=>ok,
+  get(k,d){if(ok){try{const v=localStorage.getItem(k);if(v!=null)return JSON.parse(v)}catch(e){}}return k in mem?mem[k]:d},
+  set(k,v){mem[k]=v;if(ok){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){ok=false}}}}})();
+
+/* ---------- market data ---------- */
+const SEC={IT:"IT Services",CON:"Consulting",ECOM:"E-commerce",FIN:"Fintech",PROD:"Product & SaaS",EDU:"Edtech",GLB:"Global Tech (India)",BFSI:"Banking & Insurance",CONG:"Conglomerate",TEL:"Telecom",MFG:"Manufacturing & Auto",FMCG:"FMCG & Consumer",PHA:"Pharma",HLT:"Healthcare",PSU:"PSU & Energy"};
+const GRP={IT:'a',CON:'a',GLB:'a',PROD:'a',ECOM:'b',FIN:'b',EDU:'b',BFSI:'c',CONG:'d',MFG:'d',PSU:'d',TEL:'d',FMCG:'e',PHA:'f',HLT:'f'};
+const TIER={IT:.85,CON:1,GLB:1.5,PROD:1.3,ECOM:1.3,FIN:1.3,EDU:.9,BFSI:1,CONG:1,TEL:.95,MFG:.95,FMCG:1.05,PHA:1,HLT:.9,PSU:.9};
+const CO=`TCS|IT|Mumbai|Hyderabad,Chennai,Pune,Bengaluru,Kolkata,Delhi NCR
+Infosys|IT|Bengaluru|Pune,Hyderabad,Chennai,Mysuru
+Wipro|IT|Bengaluru|Hyderabad,Chennai,Pune,Kolkata
+HCLTech|IT|Noida|Chennai,Bengaluru,Hyderabad,Lucknow
+Tech Mahindra|IT|Pune|Hyderabad,Bengaluru,Chennai,Noida
+LTIMindtree|IT|Mumbai|Bengaluru,Pune,Chennai
+Mphasis|IT|Bengaluru|Chennai,Pune
+Persistent Systems|IT|Pune|Bengaluru,Hyderabad,Nagpur
+Coforge|IT|Noida|Hyderabad,Pune,Bengaluru
+Zensar|IT|Pune|Bengaluru
+Cyient|IT|Hyderabad|Bengaluru,Pune
+Hexaware|IT|Mumbai|Chennai,Pune
+Birlasoft|IT|Noida|Pune,Bengaluru
+Sonata Software|IT|Bengaluru|Hyderabad
+Mastek|IT|Mumbai|Ahmedabad
+Nagarro|IT|Delhi NCR|Bengaluru,Pune
+KPIT Technologies|IT|Pune|Bengaluru
+Tata Elxsi|IT|Bengaluru|Pune,Thiruvananthapuram
+Cognizant India|IT|Chennai|Hyderabad,Pune,Bengaluru,Kolkata
+Capgemini India|IT|Mumbai|Bengaluru,Pune,Hyderabad,Chennai
+Accenture India|CON|Bengaluru|Hyderabad,Pune,Mumbai,Chennai,Delhi NCR
+Deloitte India|CON|Mumbai|Hyderabad,Bengaluru,Delhi NCR
+EY GDS|CON|Kolkata|Bengaluru,Hyderabad,Delhi NCR
+KPMG India|CON|Delhi NCR|Bengaluru,Mumbai
+PwC India|CON|Mumbai|Bengaluru,Kolkata
+Thoughtworks India|CON|Bengaluru|Pune,Hyderabad
+Flipkart|ECOM|Bengaluru|Delhi NCR
+Amazon India|ECOM|Hyderabad|Bengaluru,Chennai,Delhi NCR
+Myntra|ECOM|Bengaluru|Delhi NCR
+Swiggy|ECOM|Bengaluru|Hyderabad
+Zomato|ECOM|Delhi NCR|Bengaluru
+Meesho|ECOM|Bengaluru|
+Nykaa|ECOM|Mumbai|Delhi NCR
+BigBasket|ECOM|Bengaluru|
+Zepto|ECOM|Mumbai|Bengaluru
+Urban Company|ECOM|Delhi NCR|Bengaluru
+Lenskart|ECOM|Delhi NCR|Bengaluru
+Paytm|FIN|Noida|Bengaluru
+PhonePe|FIN|Bengaluru|Pune
+Razorpay|FIN|Bengaluru|
+Zerodha|FIN|Bengaluru|
+CRED|FIN|Bengaluru|
+Groww|FIN|Bengaluru|
+Juspay|FIN|Bengaluru|
+Freshworks|PROD|Chennai|Hyderabad
+Zoho|PROD|Chennai|Tenkasi
+Ola|PROD|Bengaluru|
+InMobi|PROD|Bengaluru|
+Dream11|PROD|Mumbai|
+BYJU'S|EDU|Bengaluru|
+PhysicsWallah|EDU|Noida|
+Microsoft India|GLB|Hyderabad|Bengaluru,Noida
+Google India|GLB|Bengaluru|Hyderabad,Gurugram
+Oracle India|GLB|Bengaluru|Hyderabad
+IBM India|GLB|Bengaluru|Pune,Hyderabad
+SAP Labs India|GLB|Bengaluru|
+Intel India|GLB|Bengaluru|Hyderabad
+Dell Technologies India|GLB|Bengaluru|Hyderabad
+HDFC Bank|BFSI|Mumbai|Chennai,Delhi NCR,Hyderabad
+ICICI Bank|BFSI|Mumbai|Hyderabad,Bengaluru
+State Bank of India|BFSI|Mumbai|Hyderabad,Kolkata,Delhi NCR
+Axis Bank|BFSI|Mumbai|Pune
+Kotak Mahindra Bank|BFSI|Mumbai|
+IndusInd Bank|BFSI|Mumbai|Pune
+Bank of Baroda|BFSI|Mumbai|Delhi NCR
+Punjab National Bank|BFSI|Delhi NCR|
+Bajaj Finance|BFSI|Pune|
+LIC|BFSI|Mumbai|
+Reliance Industries|CONG|Mumbai|Ahmedabad
+Adani Group|CONG|Ahmedabad|Mumbai
+Godrej Group|CONG|Mumbai|
+Tata Steel|MFG|Kolkata|Jamshedpur
+Jio Platforms|TEL|Mumbai|Hyderabad
+Bharti Airtel|TEL|Delhi NCR|Bengaluru
+Vodafone Idea|TEL|Mumbai|
+Tata Motors|MFG|Mumbai|Pune
+Mahindra & Mahindra|MFG|Mumbai|Chennai
+Maruti Suzuki|MFG|Delhi NCR|
+Bajaj Auto|MFG|Pune|
+Hero MotoCorp|MFG|Delhi NCR|
+TVS Motor|MFG|Chennai|
+Ashok Leyland|MFG|Chennai|
+Ather Energy|MFG|Bengaluru|Chennai
+Havells|MFG|Delhi NCR|
+Larsen & Toubro|MFG|Mumbai|Chennai
+Bosch India|MFG|Bengaluru|
+Siemens India|MFG|Mumbai|
+Hindustan Unilever|FMCG|Mumbai|
+ITC|FMCG|Kolkata|
+Nestlé India|FMCG|Delhi NCR|
+Britannia|FMCG|Kolkata|Bengaluru
+Dabur|FMCG|Delhi NCR|
+Asian Paints|FMCG|Mumbai|
+Titan Company|FMCG|Bengaluru|Chennai
+Tata Consumer Products|FMCG|Mumbai|Kolkata
+Sun Pharma|PHA|Mumbai|Ahmedabad
+Dr. Reddy's|PHA|Hyderabad|
+Cipla|PHA|Mumbai|
+Biocon|PHA|Bengaluru|
+Lupin|PHA|Mumbai|Pune
+Zydus|PHA|Ahmedabad|
+Aurobindo Pharma|PHA|Hyderabad|
+Apollo Hospitals|HLT|Chennai|Hyderabad
+Fortis Healthcare|HLT|Delhi NCR|Mumbai
+Max Healthcare|HLT|Delhi NCR|
+ONGC|PSU|Delhi NCR|
+Indian Oil|PSU|Delhi NCR|
+NTPC|PSU|Delhi NCR|
+Power Grid|PSU|Delhi NCR|
+Coal India|PSU|Kolkata|
+BHEL|PSU|Delhi NCR|Hyderabad,Chennai
+SAIL|PSU|Delhi NCR|Kolkata
+HAL|PSU|Bengaluru|
+ISRO|PSU|Bengaluru|Thiruvananthapuram`.split('\n').map(l=>{const[n,s,h,x]=l.split('|');return{n,s,h,c:[h,...(x?x.split(','):[])]}});
+
+/* title | family | required skills | technologies | base LPA (0-1 yr) | sector groups | responsibilities | min experience index */
+const FAMS=["Software","Data & AI","Cloud & DevOps","Security","Product & Design","Business & Ops","Finance","Sales & Marketing","HR","Core Engineering","Life Sciences"];
+const R=`Software Engineer|Software|Java,DSA,SQL,Cloud|Spring Boot,AWS,Git|5|abcd|Build and maintain backend services;Write reviewed, unit-tested code;Debug production issues with the team
+Backend Developer|Software|Python,REST APIs,SQL,DSA|Django,FastAPI,PostgreSQL|6|abc|Design and ship REST APIs;Model data and tune queries;Add monitoring and alerts to services
+Java Developer|Software|Java,SQL,REST APIs,Testing|Spring Boot,Hibernate,Maven|4.5|abc|Develop enterprise Java modules;Write integration tests;Support release and hotfix cycles
+Full Stack Developer|Software|JavaScript,React,Node.js,SQL|MongoDB,TypeScript,Express|6|abc|Build features across UI and API;Review pull requests;Deploy and monitor releases
+Frontend Developer|Software|JavaScript,HTML/CSS,React,Testing|TypeScript,Webpack,Figma|5|abc|Ship responsive UI features;Turn designs into reusable components;Improve page speed and accessibility
+Mobile App Developer|Software|Java,REST APIs,UI/UX,Testing|Kotlin,Android SDK,Firebase|6|abc|Build Android app features;Integrate backend APIs;Fix crashes reported from the field
+Embedded Software Engineer|Software|C++,Embedded C,Linux|RTOS,ARM Cortex,Git|5|ad|Write firmware for devices;Debug hardware and software issues;Document and test drivers
+QA Engineer|Software|Testing,SQL,Communication|Selenium,Postman,JIRA|3.5|abc|Design test plans and cases;Automate regression suites;Report and track defects
+QA Automation Engineer|Software|Testing,Python,CI/CD|Selenium,PyTest,Jenkins|5|ab|Build automated test frameworks;Run tests in CI pipelines;Analyse flaky test failures
+Salesforce Developer|Software|JavaScript,SQL,Requirement Analysis|Apex,Lightning,Salesforce|5|ab|Customise Salesforce objects and flows;Build Lightning components;Support UAT and releases
+Data Scientist|Data & AI|Python,Machine Learning,Statistics,SQL|scikit-learn,TensorFlow,Spark|8|abcef|Build and evaluate ML models;Run experiments and A/B tests;Present findings to stakeholders
+Data Analyst|Data & AI|SQL,Excel,Power BI,Statistics|Tableau,Python,BigQuery|4|abcdef|Query data and build dashboards;Track KPIs and explain trends;Clean and validate datasets
+Data Engineer|Data & AI|Python,SQL,ETL,Cloud|Spark,Airflow,Snowflake|7|abc|Build reliable data pipelines;Model warehouse tables;Monitor data quality and cost
+Machine Learning Engineer|Data & AI|Python,Machine Learning,Deep Learning,Cloud|PyTorch,MLflow,Kubernetes|9|ab|Train and deploy models;Automate retraining pipelines;Track model drift and latency
+BI Developer|Data & AI|SQL,Power BI,Data Modeling,Data Visualization|Tableau,DAX,SSRS|5|abc|Build self-serve dashboards;Design semantic data models;Speed up slow reports
+Generative AI Engineer|Data & AI|Python,Deep Learning,NLP,REST APIs|LangChain,Hugging Face,PyTorch|10|ab|Prototype LLM-powered features;Evaluate answer quality and safety;Ship APIs around models|1
+DevOps Engineer|Cloud & DevOps|Linux,Cloud,CI/CD,Docker|Kubernetes,Terraform,Jenkins|6|abc|Automate build and release pipelines;Monitor uptime and cost;Harden cloud infrastructure
+Cloud Engineer|Cloud & DevOps|Cloud,Linux,Networking,Python|AWS,Azure,Terraform|6|abc|Provision and secure cloud environments;Migrate workloads to the cloud;Control spend with tagging and budgets
+Site Reliability Engineer|Cloud & DevOps|Linux,Cloud,Python,Networking|Prometheus,Grafana,Kubernetes|9|ab|Keep services within their SLOs;Lead incident reviews;Automate away repetitive toil|1
+Database Administrator|Cloud & DevOps|SQL,Linux,Data Modeling|Oracle,PostgreSQL,MySQL|6|abc|Tune and back up production databases;Manage access and patches;Plan capacity and recovery
+Network Engineer|Cloud & DevOps|Networking,Linux,Cybersecurity|Cisco,Juniper,Firewalls|5|ad|Operate LAN, WAN and VPN links;Troubleshoot outages;Apply security policies to devices
+Cybersecurity Analyst|Security|Cybersecurity,Networking,Risk Assessment|Splunk,Wireshark,SIEM|6|abc|Monitor alerts and investigate incidents;Run vulnerability scans;Write incident reports
+GRC Analyst|Security|Risk Assessment,Cybersecurity,Communication|ISO 27001,Archer,ServiceNow|5|ac|Track controls against ISO 27001;Prepare for audits;Follow up on risk actions
+Product Manager|Product & Design|Product Management,Stakeholder Management,SQL,Communication|JIRA,Mixpanel,Figma|12|ab|Own the roadmap for a product area;Write clear specs with engineers;Measure launches with data|1
+Associate Product Manager|Product & Design|Product Management,Communication,SQL|JIRA,Amplitude,Figma|8|ab|Support discovery and user interviews;Write user stories;Track feature adoption
+UI/UX Designer|Product & Design|UI/UX,User Research,Wireframing|Figma,Adobe XD,Miro|5|ab|Design flows and prototypes;Test designs with real users;Maintain the design system
+Technical Writer|Product & Design|Content Writing,Communication,REST APIs|Markdown,Confluence,Git|4|a|Write developer and user guides;Document APIs;Keep docs current with each release
+Project Manager|Business & Ops|Project Management,Agile,Stakeholder Management,Communication|JIRA,MS Project,Confluence|9|ac|Plan scope, timeline and budget;Run stand-ups and reviews;Report risks to sponsors|1
+SAP Consultant|Business & Ops|Requirement Analysis,SQL,Communication|SAP S/4HANA,ABAP,JIRA|5|ad|Configure SAP modules;Run workshops with business users;Support go-live and training
+Business Analyst|Business & Ops|Requirement Analysis,SQL,Communication,Excel|JIRA,Visio,Power BI|4|abcdef|Gather and document requirements;Analyse process gaps;Coordinate between business and tech
+Operations Analyst|Business & Ops|Excel,Communication,Process Improvement|SAP,Power BI,SQL|3.5|bcdef|Monitor daily operations metrics;Prepare MIS reports;Find cost and delay reductions
+Supply Chain Analyst|Business & Ops|Supply Chain,Inventory,Excel|SAP,Power BI,Tableau|4|def|Plan demand and stock levels;Track supplier deliveries;Cut logistics cost
+Process Excellence Analyst|Business & Ops|Six Sigma,Process Improvement,Excel|Minitab,Power BI,Visio|4|cdef|Map processes and find waste;Lead improvement projects;Track savings
+Customer Success Manager|Business & Ops|Communication,Customer Support,Stakeholder Management|Zendesk,Salesforce,Freshdesk|4|ab|Onboard new customers;Handle escalations;Renew and grow accounts
+Associate Consultant|Business & Ops|Communication,Excel,Requirement Analysis,Stakeholder Management|PowerPoint,Power BI,Visio|6|a|Research markets and clients;Build models and slide decks;Support client workshops
+Finance Analyst|Finance|Excel,Financial Modeling,Accounting|SAP,Power BI,Tally|4|abcdef|Build financial models and forecasts;Reconcile accounts;Support audits and budgeting
+Financial Risk Analyst|Finance|Risk Assessment,Statistics,Excel,SQL|SAS,Python,Bloomberg|6|bc|Measure credit and market risk;Build risk reports;Stress-test portfolios
+Credit Analyst|Finance|Credit Analysis,Financial Modeling,Excel|Bloomberg,Power BI,SAP|5|bc|Assess borrower financials;Write credit notes;Monitor loan portfolio health
+Internal Auditor|Finance|Auditing,Accounting,Risk Assessment|Tally,SAP,ACL Analytics|4|acdef|Test controls and processes;Document audit findings;Track remediation
+Tax Analyst|Finance|Taxation,Accounting,Excel|Tally,GST Portal,SAP|4|acdef|Prepare GST and income tax filings;Reconcile tax ledgers;Respond to notices
+Relationship Manager|Sales & Marketing|Sales,Communication,Negotiation|Salesforce,LeadSquared,CRM Suite|4|c|Grow a book of clients;Cross-sell banking products;Keep KYC and records current
+Digital Marketing Executive|Sales & Marketing|Digital Marketing,SEO,Content Writing|Google Analytics,Meta Ads,SEMrush|3.5|abef|Run paid and organic campaigns;Report on traffic and leads;Test ad creatives
+Performance Marketing Manager|Sales & Marketing|Digital Marketing,Statistics,Excel|Google Ads,Meta Ads,GA4|7|abe|Manage ad budgets and CAC;Run landing page tests;Report ROI weekly|1
+Content Writer|Sales & Marketing|Content Writing,SEO,Communication|WordPress,Canva,Notion|3|abef|Write blogs, emails and scripts;Edit for tone and clarity;Track content performance
+Sales Executive|Sales & Marketing|Sales,Communication,Negotiation|LinkedIn Sales Navigator,HubSpot,LeadSquared|3|abcdef|Prospect and qualify leads;Run demos and follow-ups;Meet monthly targets
+Brand Manager|Sales & Marketing|Digital Marketing,Communication,Stakeholder Management|Nielsen,Power BI,Canva|8|ef|Plan brand campaigns;Brief agencies;Track market share|1
+HR Business Partner|HR|HR Policy,Employee Engagement,Communication|Workday,SuccessFactors,Darwinbox|5|abcdef|Advise managers on people matters;Run engagement surveys;Handle policy queries
+Talent Acquisition Specialist|HR|Recruitment,Communication,Negotiation|LinkedIn Recruiter,Naukri RMS,Greenhouse|4|abcdef|Source and screen candidates;Coordinate interviews;Close offers and onboarding
+Mechanical Design Engineer|Core Engineering|CAD,Mechanical Design,Quality Control|SolidWorks,CATIA,ANSYS|4|d|Model parts and assemblies;Run design checks;Support prototype builds
+Electrical Engineer|Core Engineering|Electrical Design,PLC,Quality Control|ETAP,AutoCAD Electrical,MATLAB|4|d|Design and review electrical layouts;Test panels and wiring;Follow safety standards
+Automation Engineer|Core Engineering|PLC,Python,Electrical Design|SCADA,Siemens TIA Portal,MATLAB|4.5|d|Automate manual workflows and lines;Maintain control scripts;Document and test changes
+Production Engineer|Core Engineering|Six Sigma,Quality Control,Process Improvement|SAP,AutoCAD,Minitab|4|de|Keep the line on plan;Cut scrap and downtime;Train operators on standard work
+Quality Engineer|Core Engineering|Quality Control,Six Sigma,Auditing|Minitab,SAP QM,Power BI|4|def|Inspect and approve batches;Run root-cause analysis;Prepare for customer audits
+Civil Site Engineer|Core Engineering|CAD,Site Management,Project Management|AutoCAD,Primavera,STAAD Pro|4|d|Supervise site work;Check quantities and drawings;Report daily progress
+Clinical Research Associate|Life Sciences|Clinical Research,GxP,Communication|Veeva,EDC Systems,MS Office|4|f|Monitor trial sites;Verify data against source;Report deviations
+Regulatory Affairs Associate|Life Sciences|Regulatory Affairs,GxP,Communication|Veeva Vault,eCTD,Documentum|4|f|Compile regulatory dossiers;Track submissions and approvals;Answer authority queries
+R&D Scientist|Life Sciences|Lab Techniques,Statistics,Communication|HPLC,LIMS,JMP|5|f|Design and run experiments;Analyse results statistically;Write technical reports
+Pharmacovigilance Associate|Life Sciences|GxP,Regulatory Affairs,Communication|Argus Safety,MedDRA,MS Office|3.5|f|Process adverse event cases;Code events in MedDRA;Meet reporting timelines
+Hospital Operations Manager|Life Sciences|Healthcare Operations,Process Improvement,Communication|HMS Software,Tableau,MS Office|6|f|Run daily hospital operations;Cut patient wait times;Track quality and cost metrics|1`
+.split('\n').map(l=>{const a=l.split('|');return{t:a[0],f:a[1],s:a[2].split(','),k:a[3].split(','),b:+a[4],g:a[5],r:a[6].split(';'),me:+(a[7]||0)}});
+
+const PRESETS={"Software":["Java","Python","SQL","DSA","Cloud","REST APIs","Testing"],"Data & AI":["Python","SQL","Statistics","Machine Learning","Excel","Data Visualization"],"Business":["Excel","SQL","Communication","Requirement Analysis","Power BI"],"Finance":["Excel","Accounting","Financial Modeling","Taxation","Auditing"],"Marketing":["Digital Marketing","SEO","Content Writing","Communication","Sales"],"Core engineering":["CAD","PLC","Quality Control","Six Sigma","Electrical Design"],"Life sciences":["Clinical Research","GxP","Regulatory Affairs","Communication"],"Product":["Product Management","UI/UX","Communication","Stakeholder Management","SQL"]};
+const SK=[...new Set(R.flatMap(r=>r.s))].sort(),TE=[...new Set(R.flatMap(r=>r.k))].filter(x=>!SK.includes(x)).sort();
+
+/* ---------- vacancy generator (deterministic) ---------- */
+const MODES=['Hybrid','On-site','Remote'],XP=['0-1 years','1-3 years','3-5 years'],XM=[1,1.5,2.1],r5=x=>Math.round(x*2)/2,
+fm=n=>Number.isInteger(n)?String(n):n.toFixed(1);
+const J=[];
+CO.forEach((c,ci)=>{const g=GRP[c.s],pool=R.filter(r=>r.g.includes(g)),h=H(c.n),len=pool.length,step=[7,11,13,17,19,23].find(s=>len%s!==0)||1,n=4+(h%3==0?1:0);
+ for(let k=0;k<n;k++){const r=pool[(h+k*step)%len],ei=Math.max(r.me,(h+k*3)%3),intern=ei==0&&r.me==0&&(h+k)%5==0,
+  lo=r5(Math.max(2.5,r.b*TIER[c.s]*XM[ei])),hi=r5(lo*1.5+.5),md=(g=='a'||g=='b')?MODES:MODES.slice(0,2),city=c.c[(h+k)%c.c.length];
+  const j={id:J.length,t:r.t+(intern?' Intern':''),role:r.t,f:r.f,co:c.n,ci,sec:c.s,l:city,m:md[(h+k*5)%md.length],ei,exp:XP[ei],ty:intern?'Internship':'Full-time',
+   lo:intern?0:lo,hi:intern?0:hi,sal:intern?`₹${15+(h%4)*5}–${30+(h%4)*5}K / month`:`₹${fm(lo)}–${fm(hi)} LPA`,s:r.s,k:r.k,r:r.r,d:(h+k*11)%30+1,op:2+H(c.n+r.t)%38};
+  j.ix=(j.t+' '+j.co+' '+j.f+' '+j.s.join(' ')+' '+j.k.join(' ')+' '+j.l+' '+SEC[j.sec]).toLowerCase();J.push(j)}});
+const CITIES=[...new Set(J.map(j=>j.l))].sort(),OPEN=J.reduce((a,j)=>a+j.op,0);
+const openingsFor=s=>J.reduce((a,j)=>a+(j.s.includes(s)?j.op:0),0);
+
+/* ---------- entity extraction: word-boundary, longest-match-first ---------- */
+const PAT=[],CS=new Set(['ITC','LIC','Ola','EY','CRED','Axis','HAL','SAIL']);
+const rx=s=>s.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&');
+function addPat(kind,name,alias){const cs=CS.has(alias);PAT.push({kind,name,len:alias.length,re:new RegExp('(^|[^A-Za-z0-9+#])('+rx(cs?alias:alias.toLowerCase())+')(?![A-Za-z0-9+#])',cs?'g':'gi')})}
+const CA={"State Bank of India":["sbi"],"HCLTech":["hcl"],"Cognizant India":["cognizant","cts"],"Capgemini India":["capgemini"],"Tech Mahindra":["techm","tech m"],"Mahindra & Mahindra":["m&m","mahindra"],"Larsen & Toubro":["l&t","larsen"],"Kotak Mahindra Bank":["kotak"],"Dr. Reddy's":["dr reddys","dr reddy's","reddys"],"BYJU'S":["byjus","byju's"],"Nestlé India":["nestle","nestlé"],"Hindustan Unilever":["hul"],"Bajaj Finance":["bajaj finserv"],"EY GDS":["EY","ernst & young"],"Jio Platforms":["jio"],"Tata Motors":["tata motors"],"Accenture India":["accenture"],"Deloitte India":["deloitte"],"KPMG India":["kpmg"],"PwC India":["pwc"],"Amazon India":["amazon"],"Microsoft India":["microsoft"],"Google India":["google"],"Oracle India":["oracle"],"IBM India":["ibm"],"SAP Labs India":["sap labs"],"Intel India":["intel"],"Dell Technologies India":["dell"],"Punjab National Bank":["pnb"],"Bank of Baroda":["bob","bank of baroda"],"Ashok Leyland":["leyland"],"Thoughtworks India":["thoughtworks"],"Urban Company":["urbanclap"],"Titan Company":["titan"],"Godrej Group":["godrej"],"Adani Group":["adani"],"Reliance Industries":["reliance"],"Zoho":["zoho"],"Meesho":["meesho"]};
+const AMB=new Set(['tata','state','indian','hindustan','bajaj','max','power','coal','punjab','bank','tech','sun','hero']);
+const SUF=/\s+(India|Technologies|Systems|Software|Platforms|Industries|Group|Company|Products|Pharma|Bank|Labs|Motors?|MotoCorp|GDS|Healthcare|Hospitals|Consumer Products|Consumer)$/i;
+CO.forEach(c=>{const s=new Set([c.n,...(CA[c.n]||[])]);const st=c.n.replace(SUF,'');if(st.length>=3&&!AMB.has(st.toLowerCase()))s.add(st);s.forEach(a=>addPat('co',c.n,a))});
+const SA={"Machine Learning":["ml","machine learning"],"Deep Learning":["deep learning"],"JavaScript":["js"],"Node.js":["nodejs","node"],"Power BI":["powerbi"],"CI/CD":["cicd","ci cd"],"DSA":["data structures","algorithms"],"REST APIs":["rest api","restful"],"HTML/CSS":["html","css"],"Data Visualization":["data visualisation","dataviz"],"Cybersecurity":["cyber security","infosec"],"Cloud":["cloud computing"],"Excel":["ms excel","advanced excel"],"Statistics":["stats","statistical"],"Testing":["qa","test automation"],"UI/UX":["ux","ui ux"],"Requirement Analysis":["requirements gathering","requirements"],"Stakeholder Management":["stakeholders"],"Financial Modeling":["financial modelling"],"Six Sigma":["lean six sigma"],"Content Writing":["copywriting"],"Recruitment":["talent acquisition"],"HR Policy":["hr policies"],"GxP":["gmp","gcp"],"Kubernetes":["k8s"],"Communication":["communication skills"],"Project Management":["pmp"],"Agile":["scrum"],"Customer Support":["customer service"],"Sales":["selling"]};
+SK.forEach(s=>{new Set([s,...(SA[s]||[])]).forEach(a=>addPat('sk',s,a))});
+const TA={"Spring Boot":["springboot"],"scikit-learn":["sklearn"],"PostgreSQL":["postgres"],"MongoDB":["mongo"],"TypeScript":["typescript"]};
+TE.forEach(s=>{new Set([s,...(TA[s]||[])]).forEach(a=>addPat('te',s,a))});
+const RA={"Software Engineer":["sde","swe","software developer"],"QA Engineer":["tester"],"Data Scientist":["data science"],"Machine Learning Engineer":["ml engineer"],"Product Manager":["pm role"]};
+R.forEach(r=>{new Set([r.t,...(RA[r.t]||[])]).forEach(a=>addPat('ro',r.t,a))});
+const CIA={"Bengaluru":["bangalore","blr"],"Delhi NCR":["delhi","ncr"],"Gurugram":["gurgaon"],"Mumbai":["bombay"],"Chennai":["madras"],"Kolkata":["calcutta"],"Mysuru":["mysore"],"Thiruvananthapuram":["trivandrum"]};
+CITIES.forEach(c=>{new Set([c,...(CIA[c]||[])]).forEach(a=>addPat('ci',c,a))});
+PAT.sort((a,b)=>b.len-a.len);
+function extract(text){let w=String(text);const e={co:[],sk:[],te:[],ro:[],ci:[]};
+ for(const p of PAT){w=w.replace(p.re,(m,pre,a)=>{if(!e[p.kind].includes(p.name))e[p.kind].push(p.name);return pre+' '.repeat(a.length)})}
+ return e}
+const allEnt=e=>[...e.co,...e.sk,...e.ro,...e.te,...e.ci];
+
+/* ---------- tokenising + light stemming ---------- */
+const STOP=new Set('a an the and or of to in on at for with by is was were be been are am i me my we it this that what which who when why how did do does about after from had have has as so but not no they them their there any all can could should would will just only also than then more most very up out over into you your tell show give recall'.split(' '));
+const IRR={applied:'apply',applying:'apply',applies:'apply',application:'apply',applications:'apply',applicant:'apply',interviewed:'interview',interviewing:'interview',interviews:'interview',rejected:'reject',rejection:'reject',rejections:'reject',rejects:'reject',ghosted:'ghost',ghosting:'ghost',offered:'offer',offers:'offer',replied:'reply',replies:'reply'};
+const stem=w=>{if(IRR[w])return IRR[w];if(w.length<=3)return w;return w.replace(/(ations|ation|ings|ing|ions|ion|ies|ed|es|s)$/,m=>m=='ies'?'y':'')};
+const tokenize=s=>(String(s).toLowerCase().match(/[a-z0-9+#]+/g)||[]).filter(w=>!STOP.has(w)).map(stem);
+
+/* ---------- memory bank ---------- */
+const TYPES=['Applied','Interview','Offer','Rejected','Ghosted','Insight'],NEG=new Set(['Rejected','Ghosted']),POS=new Set(['Interview','Offer']);
+const DEFAULT_SKILLS=["SQL","Excel","Power BI","Statistics","Python","Communication"];
+let my=new Set(store.get('hh3_sk',DEFAULT_SKILLS).filter(s=>SK.includes(s)));
+let M=[],IDX={co:new Map(),sk:new Map(),ro:new Map(),te:new Map(),job:new Map(),df:new Map(),avg:1,N:0};const FC=new Map();
+const uid=()=>Date.now()*1000+Math.floor(Math.random()*1000);
+const decorate=m=>{m.e=extract(m.tx);return m};
+const ago=ts=>{const d=Math.floor((Date.now()-ts)/DAY);return d<=0?'today':d==1?'yesterday':d<14?d+'d ago':d<60?Math.round(d/7)+' weeks ago':Math.round(d/30)+' months ago'};
+function seed(){const n=Date.now();return[
+ {ty:'Rejected',tx:'Rejected by Infosys after round 2. They focused on Java and I only had Python.',ts:n-20*DAY},
+ {ty:'Rejected',tx:'HCLTech turned down my profile: they wanted Python and Machine Learning for the Data Scientist role.',ts:n-26*DAY},
+ {ty:'Applied',tx:'Applied to Data Analyst at Accenture India',ts:n-12*DAY},
+ {ty:'Interview',tx:'Deloitte India interview went well. Strong feedback on Excel modelling and communication.',ts:n-7*DAY},
+ {ty:'Interview',tx:'TCS interview for Data Analyst went well. SQL and Statistics questions.',ts:n-9*DAY},
+ {ty:'Ghosted',tx:'Wipro never replied after the Excel test for the Business Analyst role.',ts:n-5*DAY},
+ {ty:'Insight',tx:'Power BI dashboards impressed the panel. Mention them in the first two minutes next time.',ts:n-3*DAY}
+].map((m,i)=>({id:uid()+i,...m}))}
+function loadMemory(){let raw=store.get('hh3_mem',null);if(!Array.isArray(raw)){raw=seed();store.set('hh3_mem',raw)}
+ M=raw.filter(m=>m&&TYPES.includes(m.ty)&&typeof m.tx=='string'&&typeof m.ts=='number').map(m=>decorate({id:m.id,ty:m.ty,tx:m.tx,ts:m.ts,job:m.job}))}
+function persist(){store.set('hh3_mem',M.map(({id,ty,tx,ts,job})=>({id,ty,tx,ts,job})));store.set('hh3_sk',[...my])}
+function reindex(){const co=new Map(),sk=new Map(),ro=new Map(),te=new Map(),job=new Map(),df=new Map();let tot=0;
+ const push=(mp,k,m)=>{let a=mp.get(k);if(!a)mp.set(k,a=[]);a.push(m)};
+ M.forEach(m=>{m.e.co.forEach(k=>push(co,k,m));m.e.sk.forEach(k=>push(sk,k,m));m.e.ro.forEach(k=>push(ro,k,m));m.e.te.forEach(k=>push(te,k,m));if(m.job!=null)push(job,m.job,m);
+  m._tf=new Map();const toks=tokenize(m.tx+' '+m.ty+' '+allEnt(m.e).join(' '));toks.forEach(t=>m._tf.set(t,(m._tf.get(t)||0)+1));m._len=toks.length||1;tot+=m._len;m._tf.forEach((_,t)=>df.set(t,(df.get(t)||0)+1))});
+ IDX={co,sk,ro,te,job,df,avg:tot/(M.length||1),N:M.length};FC.clear()}
+const wt=m=>.55+.45*Math.exp(-(Date.now()-m.ts)/(60*DAY));
+const latest=a=>a&&a.length?a.reduce((x,y)=>y.ts>=x.ts?y:x):null;
+
+/* ---------- fit: skill match adjusted by hindsight ---------- */
+function fit(j){let f=FC.get(j.id);if(f)return f;
+ const miss=j.s.filter(k=>!my.has(k)),base=Math.round(100*(j.s.length-miss.length)/j.s.length),parts=[],bad=[],good=[],notes=[],seen=new Set();let adj=0;
+ const add=(arr,m)=>{if(!seen.has(m.id)){seen.add(m.id);arr.push(m)}};
+ let d=0;(IDX.co.get(j.co)||[]).forEach(m=>{const w=wt(m);if(NEG.has(m.ty)){d-=6*w;add(bad,m)}else if(m.ty=='Offer'){d+=10*w;add(good,m)}else if(m.ty=='Interview'){d+=6*w;add(good,m)}else if(m.ty=='Insight')add(notes,m)});
+ if(Math.round(d))parts.push({l:`History with ${j.co}`,d:Math.round(d)});adj+=d;
+ miss.forEach(k=>{let x=0;(IDX.sk.get(k)||[]).forEach(m=>{if(NEG.has(m.ty)){x-=4*wt(m);add(bad,m)}});if(Math.round(x))parts.push({l:`${k} appeared in a rejection or silence`,d:Math.round(x)});adj+=x});
+ let st=0;const stn=[];j.s.filter(k=>my.has(k)).forEach(k=>{(IDX.sk.get(k)||[]).forEach(m=>{if(POS.has(m.ty)){st+=2*wt(m);add(good,m);if(!stn.includes(k))stn.push(k)}})});st=Math.min(st,6);
+ if(Math.round(st))parts.push({l:`Strength in interviews (${stn.slice(0,3).join(', ')})`,d:Math.round(st)});adj+=st;
+ let rd=0;(IDX.ro.get(j.role)||[]).forEach(m=>{const w=wt(m);if(NEG.has(m.ty)){rd-=3*w;add(bad,m)}else if(POS.has(m.ty)){rd+=4*w;add(good,m)}});
+ if(Math.round(rd))parts.push({l:`Earlier ${j.role} outcomes`,d:Math.round(rd)});adj+=rd;
+ [...j.s,...j.k].forEach(k=>{(IDX.sk.get(k)||IDX.te.get(k)||[]).forEach(m=>{if(m.ty=='Insight')add(notes,m)})});(IDX.ro.get(j.role)||[]).forEach(m=>{if(m.ty=='Insight')add(notes,m)});
+ adj=clamp(adj,-25,18);
+ const app=latest((IDX.job.get(j.id)||[]).filter(m=>m.ty!='Insight')),coApp=(IDX.co.get(j.co)||[]).filter(m=>m.ty=='Applied'&&m.job!==j.id&&!app);
+ bad.sort((a,b)=>b.ts-a.ts);good.sort((a,b)=>b.ts-a.ts);notes.sort((a,b)=>b.ts-a.ts);
+ f={base,total:Math.round(clamp(base+adj,0,100)),adj:Math.round(adj),parts,miss,bad,good,notes,app,coApp:latest(coApp)};FC.set(j.id,f);return f}
+
+/* ---------- retain / recall / reflect ---------- */
+function retain(ty,tx,o={}){const m=decorate({id:uid(),ty,tx:tx.trim(),ts:o.ts||Date.now(),job:o.job});M.push(m);persist();reindex();return m}
+function forget(id){M=M.filter(m=>m.id!==id);persist();reindex()}
+function amend(id,ty,tx,ts){const m=M.find(x=>x.id===id);if(!m)return;m.ty=ty;m.tx=tx.trim();m.ts=ts;decorate(m);persist();reindex()}
+function setSkills(s){my=new Set(s);persist();FC.clear()}
+
+function parseQuery(q){const raw=String(q).trim(),ql=raw.toLowerCase(),t=Date.now(),d0=new Date();d0.setHours(0,0,0,0);const today=d0.getTime();let win=null,note='',mm;
+ if(/\byesterday\b/.test(ql)){win=[today-DAY,today];note='yesterday'}
+ else if(/\btoday\b/.test(ql)){win=[today,t+DAY];note='today'}
+ else if((mm=ql.match(/\b(?:last|past)\s+(\d{1,3})\s+days?\b/))){win=[t-mm[1]*DAY,t+1];note=`the last ${mm[1]} days`}
+ else if(/\b(?:last|past|this)\s+week\b/.test(ql)){win=[t-7*DAY,t+1];note='the last 7 days'}
+ else if(/\b(?:last|past|this)\s+month\b/.test(ql)){win=[t-30*DAY,t+1];note='the last 30 days'}
+ const clean=raw.replace(/\b(yesterday|today|(?:last|past)\s+\d{1,3}\s+days?|(?:last|past|this)\s+(?:week|month))\b/gi,' ');
+ const e=extract(clean),it=new Set();
+ if(/reject|turned down|declin|didn'?t get|failed/.test(ql))it.add('Rejected');
+ if(/ghost|no reply|never repl|no response|didn'?t reply|silence/.test(ql))it.add('Ghosted');
+ if(/interview|round\b|screening/.test(ql))it.add('Interview');
+ if(/\boffer|selected|hired/.test(ql))it.add('Offer');
+ if(/\bappl(y|ied|ication)/.test(ql))it.add('Applied');
+ if(/strength|went well|good|success|worked|working|\bwins?\b/.test(ql)){it.add('Interview');it.add('Offer')}
+ if(/blocker|weak|mistake|struggl|\bwhy\b|lesson|problem|\bgap/.test(ql)){it.add('Rejected');it.add('Ghosted')}
+ if(/insight|\btips?\b|\bnotes?\b|learn/.test(ql))it.add('Insight');
+ const terms=[...new Set([...tokenize(clean),...allEnt(e).flatMap(tokenize)])];
+ const words=[...new Set([...(clean.toLowerCase().match(/[a-z0-9+#]{3,}/g)||[]).filter(w=>!STOP.has(w)),...allEnt(e)])];
+ const W={co:1.5,sk:1,ro:1,te:.6,ci:.5};let entTotal=0;for(const k in W)entTotal+=W[k]*e[k].length;
+ return{raw,e,win,note,intent:it,terms,words,W,entTotal}}
+function recall(q,n=8){const P=parseQuery(q);if(!P.raw)return{empty:true,items:[],P};
+ const N=IDX.N,k1=1.2,b=.75,idf=t=>{const d=IDX.df.get(t)||0;return Math.log(1+(N-d+.5)/(d+.5))},open=!P.terms.length&&!P.entTotal&&!P.intent.size,c=[];
+ M.forEach(m=>{if(P.win&&(m.ts<P.win[0]||m.ts>=P.win[1]))return;let lex=0;P.terms.forEach(t=>{const tf=m._tf.get(t);if(tf)lex+=idf(t)*tf*(k1+1)/(tf+k1*(1-b+b*m._len/IDX.avg))});
+  let ent=0;const em=[];for(const k in P.W)P.e[k].forEach(nm=>{if(m.e[k].includes(nm)){ent+=P.W[k];em.push(nm)}});
+  const ih=P.intent.has(m.ty);if(!lex&&!ent&&!ih&&!open)return;c.push({m,lex,ent,ih,em})});
+ const mx=Math.max(...c.map(x=>x.lex),1e-9);
+ c.forEach(x=>{const rec=Math.exp(-(Date.now()-x.m.ts)/(45*DAY));x.rec=rec;x.score=.5*x.lex/mx+.3*(P.entTotal?x.ent/P.entTotal:0)+.12*(x.ih?1:0)+.08*rec});
+ c.sort((a,b)=>b.score-a.score);const items=c.slice(0,n),top=items[0]?items[0].score:1;
+ items.forEach(x=>{x.rel=Math.round(100*x.score/top);const low=x.m.tx.toLowerCase();x.why=[...x.em,...P.words.filter(w=>!x.em.includes(w)&&low.includes(w.toLowerCase())&&!allEnt(P.e).includes(w))];if(x.ih)x.why.push('type: '+x.m.ty);if(Date.now()-x.m.ts<7*DAY)x.why.push('recent')});
+ const acts=[];P.e.sk.slice(0,2).forEach(s=>acts.push({l:`See vacancies needing ${s}`,f:'skill:'+s}));P.e.co.slice(0,2).forEach(s=>acts.push({l:`See ${s} vacancies`,f:'company:'+s}));P.e.ro.slice(0,1).forEach(s=>acts.push({l:`See ${s} vacancies`,f:'q:'+s}));
+ let summary='';if(items.length){const cnt={};items.forEach(x=>cnt[x.m.ty]=(cnt[x.m.ty]||0)+1);summary=`${items.length} ${items.length==1?'memory':'memories'} matched${P.note?' in '+P.note:''}: ${Object.entries(cnt).map(([t,v])=>v+' '+t.toLowerCase()).join(', ')}. Latest was ${ago(Math.max(...items.map(x=>x.m.ts)))}.`;
+  P.e.sk.forEach(s=>{if(!my.has(s)&&items.some(x=>NEG.has(x.m.ty)&&x.m.e.sk.includes(s)))summary+=` ${s} isn't in your skills yet, and ${openingsFor(s).toLocaleString()} openings ask for it.`})}
+ return{items,summary,acts:acts.slice(0,3),P}}
+
+function pipeline(){const g=new Map();[...M].sort((a,b)=>a.ts-b.ts).forEach(m=>{if(m.ty=='Insight')return;const co=m.e.co[0],ro=m.e.ro[0]||'',key=m.job!=null?'j'+m.job:co?'c'+co+'|'+ro:'m'+m.id,p=g.get(key);
+ g.set(key,{key,job:m.job!=null?m.job:(p?p.job:undefined),co:m.job!=null&&J[m.job]?J[m.job].co:co,role:m.job!=null&&J[m.job]?J[m.job].t:ro,ty:m.ty,ts:m.ts,n:(p?p.n:0)+1,evs:(p?p.evs:[]).concat(m),tx:m.tx})});
+ return[...g.values()].map(x=>({...x,label:x.co?(x.role?x.role+' at '+x.co:x.co):trim(x.tx,50),reached:x.evs.some(m=>POS.has(m.ty))})).sort((a,b)=>b.ts-a.ts)}
+function whatIf(){const out=[];SK.forEach(s=>{if(my.has(s))return;let n=0,op=0;J.forEach(j=>{if(!j.s.includes(s))return;const ms=j.s.filter(k=>!my.has(k)).length,b0=100*(j.s.length-ms)/j.s.length,b1=100*(j.s.length-ms+1)/j.s.length;if(b0<70&&b1>=70){n++;op+=j.op}});if(n)out.push({s,n,op})});return out.sort((a,b)=>b.n-a.n)}
+function bestNext(n=3){const applied=new Set(pipeline().filter(p=>p.job!=null).map(p=>p.job)),cos=new Set(),out=[];
+ [...J].filter(j=>!applied.has(j.id)&&j.ty=='Full-time').sort((a,b)=>fit(b).total-fit(a).total||b.op-a.op).forEach(j=>{if(out.length<n&&!cos.has(j.co)){cos.add(j.co);out.push(j)}});return out}
+function reflect(){const cards=[];const PL=pipeline();
+ if(!M.filter(m=>m.ty!='Insight').length&&!M.length)return{cards:[{tone:'',title:'Nothing to reflect on yet',body:'Log your first application or interview and patterns will appear here.',acts:[]}],PL};
+ const neg=[],pos=[];IDX.sk.forEach((ms,s)=>{const nn=ms.filter(m=>NEG.has(m.ty)),pp=ms.filter(m=>POS.has(m.ty));if(nn.length)neg.push({s,n:nn.length,w:nn.reduce((a,m)=>a+wt(m),0)});if(pp.length)pos.push({s,n:pp.length})});
+ neg.sort((a,b)=>b.w-a.w).slice(0,2).forEach(x=>{const own=my.has(x.s);cards.push(own?{tone:'',title:`${x.s}: you have it, but it keeps coming up`,body:`It appears in ${x.n} rejection or ghosting ${x.n>1?'memories':'memory'}. Prepare two concrete examples that show it in action.`,acts:[{l:`See ${x.s} vacancies`,f:'skill:'+x.s}]}:
+  {tone:'warn',title:`Recurring blocker: ${x.s}`,body:`It appears in ${x.n} rejection or ghosting ${x.n>1?'memories':'memory'} and isn't in your skills. ${openingsFor(x.s).toLocaleString()} openings ask for it.`,acts:[{l:`See vacancies needing ${x.s}`,f:'skill:'+x.s},{l:'I have this skill now',learn:x.s}]})});
+ const st=pos.filter(x=>my.has(x.s)).sort((a,b)=>b.n-a.n).slice(0,3);if(st.length)cards.push({tone:'good',title:`Strength: ${st.map(x=>x.s).join(', ')}`,body:`These skills came up in your interview and offer memories. Lead with them in applications and openers.`,acts:[{l:`See ${st[0].s} vacancies`,f:'skill:'+st[0].s}]});
+ const gh=PL.filter(p=>p.ty=='Ghosted'&&p.co).slice(0,2);gh.forEach(p=>cards.push({tone:'',title:`Silence from ${p.co}`,body:`Ghosted ${ago(p.ts)}. Send one polite follow-up, then move on. Roles there are scored a little lower for you.`,acts:[{l:`See ${p.co} vacancies`,f:'company:'+p.co}]}));
+ const wait=PL.filter(p=>p.ty=='Applied'&&Date.now()-p.ts>=7*DAY);if(wait.length)cards.push({tone:'',title:`${wait.length} ${wait.length>1?'applications are':'application is'} waiting over a week`,body:`${wait.slice(0,2).map(p=>p.label).join('; ')}${wait.length>2?' and more':''}. Consider a follow-up message.`,acts:[]});
+ const apps=PL.length;if(apps>=3){const r=PL.filter(p=>p.reached).length;cards.push({tone:'',title:`${Math.round(100*r/apps)}% of tracked applications reached an interview`,body:`${r} of ${apps}. ${r/apps<.25?'Tighter targeting may help: use the fit scores to focus on roles you match.':'Keep applying to similar roles.'}`,acts:[]})}
+ const t7=M.filter(m=>m.ty=='Applied'&&Date.now()-m.ts<7*DAY).length,t14=M.filter(m=>m.ty=='Applied'&&Date.now()-m.ts>=7*DAY&&Date.now()-m.ts<14*DAY).length;
+ if(t7||t14)cards.push({tone:'',title:`${t7} application${t7==1?'':'s'} in the last 7 days`,body:t14?`That's ${t7>=t14?'up from or level with':'down from'} ${t14} the week before.`:'Nothing logged the week before.',acts:[]});
+ whatIf().slice(0,2).forEach(w=>cards.push({tone:'',title:`Learning ${w.s} would lift ${w.n} vacancies past 70% fit`,body:`That covers ${w.op.toLocaleString()} openings that are currently below 70% for you.`,acts:[{l:`See vacancies needing ${w.s}`,f:'skill:'+w.s},{l:'I have this skill now',learn:w.s}]}));
+ return{cards,PL}}
+</script>
+
+<!-- ============ UI ============ -->
+<script id="ui">
+'use strict';
+const $=id=>document.getElementById(id),PAGE=24;let lim=PAGE,cur='jobs',F={fam:''},tlF='All',tlLim=12,editing=null,lastFocus=null,PLc=[],updEntry=null,tt;
+const IC={jobs:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',cos:'<path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16M14 9h5a1 1 0 0 1 1 1v11M2 21h20M8 8h2M8 12h2M8 16h2"/>',mkt:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',mem:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2"/>'};
+const svg=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`,LOOP=svg(IC.mem);
+const NAV=[['jobs','Vacancies'],['cos','Companies'],['mkt','Market'],['mem','Memory']];
+$('nav').innerHTML=NAV.map(([p,l],i)=>`<button data-p="${p}" class="${i?'':'on'}">${svg(IC[p])}<span>${l}</span></button>`).join('');
+function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(tt);tt=setTimeout(()=>t.style.display='none',2600)}
+const mono=n=>`<div class="mono" style="--h:${H(n)%360}" aria-hidden="true">${esc(n[0])}</div>`;
+const ringC=p=>p>=75?'var(--gr)':p>=50?'var(--hs)':'var(--mu)';
+const ring=(p,lg)=>`<div class="ring${lg?' lg':''}" style="--p:${p};--c:${ringC(p)}" role="img" aria-label="${p} percent fit"><b>${p}</b></div>`;
+const pill=t=>`<span class="pill t-${t}">${t}</span>`;
+const hl=(t,ws)=>{const s=esc(t),a=[...new Set(ws)].filter(w=>w&&w.length>1).sort((x,y)=>y.length-x.length).map(w=>esc(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));return a.length?s.replace(new RegExp('('+a.join('|')+')','gi'),'<mark>$1</mark>'):s};
+
+/* ---------- vacancies ---------- */
+function filt(){const v=i=>$(i).value.trim().toLowerCase();return{q:v('q').split(/\s+/).filter(Boolean),c:v('fco'),l:$('loc').value,sc:$('sec').value,sk:v('fsk'),te:v('fte'),md:$('mode').value,ex:$('exp').value,ty:$('typ').value,sa:+$('sal').value,fam:F.fam}}
+const nFilters=()=>{const f=filt();return(f.q.length?1:0)+[f.c,f.l,f.sc,f.sk,f.te,f.md,f.ex,f.ty,f.sa,f.fam].filter(Boolean).length};
+function noteHTML(f,j){let kind,m,extra='';
+ if(f.bad.length){kind='bad';m=f.bad[0];extra=f.bad.length>1?` (+${f.bad.length-1} more)`:''}else if(f.good.length){kind='good';m=f.good[0];extra=f.good.length>1?` (+${f.good.length-1} more)`:''}else if(f.notes.length){kind='n';m=f.notes[0]}else if(f.coApp){kind='n';m=f.coApp}else return'';
+ const lead=kind=='bad'?'Heads up':kind=='good'?'Working in your favour':'From your notes';
+ return`<div class="nt ${kind}">${LOOP}<div><b>${lead}.</b> ${esc(m.ty)} ${ago(m.ts)}: ${esc(trim(m.tx,120))}${extra}</div></div>`}
+function cardHTML(j){const f=fit(j),dl=f.total-f.base,app=f.app,
+ act=app?`<span class="pill t-${app.ty}">${app.ty} ${ago(app.ts)}</span><button class="b s sm" data-a="${j.id}">Update status</button>`:`<button class="b" data-a="${j.id}">Apply & remember</button>`;
+ return`<article class="job"><div class="jt">${mono(j.co)}<div class="jm"><h3><button data-v="${j.id}">${esc(j.t)}</button></h3><div class="co">${esc(j.co)} <span>· ${esc(SEC[j.sec])}</span></div></div>
+ <div class="mr">${ring(f.total)}${dl?`<span class="dl ${dl>0?'up':'dn'}">${dl>0?'+':'−'}${Math.abs(dl)} memory</span>`:''}</div></div>
+ <div class="meta"><span>${esc(j.l)}</span><span>${j.m}</span><span>${j.exp}</span><span><b>${esc(j.sal)}</b></span><span>${j.op} openings</span><span>${j.d}d ago</span></div>
+ <div>${j.s.map(k=>`<span class="tg ${my.has(k)?'own':'miss'}" title="${my.has(k)?'You have this':'Not in your skills'}">${my.has(k)?'✓ ':''}${esc(k)}</span>`).join('')}${j.k.map(k=>`<span class="tg te">${esc(k)}</span>`).join('')}</div>
+ ${noteHTML(f,j)}<div class="acts"><button class="b s" data-v="${j.id}">Full details</button>${act}</div></article>`}
+function render(){const t0=performance.now(),f=filt(),so=$('sort').value;
+ let r=J.filter(j=>f.q.every(t=>j.ix.includes(t))&&(!f.c||j.co.toLowerCase().includes(f.c))&&(!f.l||j.l==f.l)&&(!f.sc||j.sec==f.sc)&&(!f.sk||j.s.some(x=>x.toLowerCase().includes(f.sk)))&&(!f.te||j.k.some(x=>x.toLowerCase().includes(f.te)))&&(!f.md||j.m==f.md)&&(!f.ex||j.exp==f.ex)&&(!f.ty||j.ty==f.ty)&&(!f.sa||j.hi>=f.sa)&&(!f.fam||j.f==f.fam));
+ const s={fit:(a,b)=>fit(b).total-fit(a).total||a.d-b.d,m:(a,b)=>fit(b).base-fit(a).base||a.d-b.d,n:(a,b)=>a.d-b.d,s:(a,b)=>b.hi-a.hi,o:(a,b)=>b.op-a.op}[so];r.sort(s);
+ $('list').innerHTML=r.slice(0,lim).map(cardHTML).join('')||`<div class="empty">No vacancies match these filters.<div style="margin-top:10px"><button class="b s" id="clr2">Clear all filters</button></div></div>`;
+ $('more').style.display=r.length>lim?'inline-flex':'none';
+ const n=nFilters();$('fbtn').textContent=n?`Filters (${n})`:'Filters';
+ $('cnt').textContent=`${r.length} vacancies · ${r.reduce((a,j)=>a+j.op,0).toLocaleString()} openings${r.length>lim?` · showing ${lim}`:''}`}
+function famUI(){const c={};J.forEach(j=>c[j.f]=(c[j.f]||0)+1);$('fams').innerHTML=[['','All fields',J.length],...FAMS.map(x=>[x,x,c[x]])].map(([k,l,n])=>`<button class="chip" data-fam="${esc(k)}" aria-pressed="${F.fam==k}">${esc(l)} <span class="mu">${n}</span></button>`).join('')}
+function skillsUI(){const q=$('sks').value.trim().toLowerCase(),mine=SK.filter(s=>my.has(s));
+ $('skmine').innerHTML=mine.length?mine.map(s=>`<button class="chip" data-s="${esc(s)}" aria-pressed="true" title="Remove">${esc(s)} ×</button>`).join(''):'<span class="mu sm">No skills selected yet.</span>';
+ const rest=SK.filter(s=>!my.has(s)&&(!q||s.toLowerCase().includes(q)));$('skall').innerHTML=rest.slice(0,q?60:30).map(s=>`<button class="chip" data-s="${esc(s)}" aria-pressed="false">+ ${esc(s)}</button>`).join('')+(!q&&rest.length>30?`<span class="mu sm" style="padding:4px">Search to see ${rest.length-30} more</span>`:'')||'<span class="mu sm">No skills found.</span>'}
+function presetUI(){$('presets').innerHTML=Object.keys(PRESETS).map(k=>`<button class="chip" data-preset="${esc(k)}">${esc(k)}</button>`).join('')}
+function statsUI(){$('stl').textContent=`${J.length} vacancies · ${OPEN.toLocaleString()} openings · ${CO.length} companies · ${CITIES.length} cities · ${R.length} roles`}
+function briefUI(){const items=[],rf=reflect();
+ const w=rf.cards.find(c=>c.tone=='warn'),g=rf.cards.find(c=>c.tone=='good');
+ if(w)items.push(`<div class="bi"><span class="dot dn"></span><div><b>${esc(w.title)}</b><br><span class="mu">${esc(w.body)}</span><div class="ba">${w.acts.map(a=>a.f?`<button class="b sm s" data-f="${esc(a.f)}">${esc(a.l)}</button>`:`<button class="b sm s" data-learn="${esc(a.learn)}">${esc(a.l)}</button>`).join('')}</div></div></div>`);
+ if(g)items.push(`<div class="bi"><span class="dot up"></span><div><b>${esc(g.title)}</b><br><span class="mu">Lead with these when you apply.</span></div></div>`);
+ const wait=PLc.filter(p=>p.ty=='Applied'&&Date.now()-p.ts>=7*DAY);if(wait.length)items.push(`<div class="bi"><span class="dot"></span><div><b>Follow up: ${esc(wait[0].label)}</b><br><span class="mu">Applied ${ago(wait[0].ts)} with no update logged.</span></div></div>`);
+ const nx=bestNext(1)[0];if(nx){const f=fit(nx);items.push(`<div class="bi"><span class="dot up"></span><div><b>Best next application: ${esc(nx.t)} at ${esc(nx.co)}</b><br><span class="mu">${f.total}% fit${f.total!=f.base?` (${f.base}% skills, ${f.adj>0?'+':'−'}${Math.abs(f.adj)} from memory)`:''}</span><div class="ba"><button class="b sm s" data-v="${nx.id}">See details</button></div></div></div>`)}
+ $('brief').innerHTML=`<h2>Hindsight brief</h2><p class="mu sm" style="margin-bottom:6px">What your memory says today</p>${items.slice(0,3).join('')||`<div class="bi"><span class="dot"></span><div>Nothing remembered yet. Apply to a job or log an outcome and this brief fills in.<div class="ba"><button class="b sm" data-p="mem">Open memory</button></div></div></div>`}`}
+
+function openModal(html){lastFocus=document.activeElement;$('mbody').innerHTML=html;$('md').classList.add('on');document.body.style.overflow='hidden';$('md').querySelector('.mb').scrollTop=0;$('md').querySelector('.mb').focus()}
+function closeModal(){$('md').classList.remove('on');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}}
+function spec(j){const f=fit(j),c=CO[j.ci],rel=[...f.bad,...f.good,...f.notes].slice(0,5),app=f.app;
+ openModal(`<div class="mh">${mono(j.co)}<div><h2 id="mtl">${esc(j.t)}</h2><div class="co">${esc(j.co)} <span>· ${esc(SEC[j.sec])}</span></div></div>${ring(f.total,true)}</div>
+ <table><tr><th>Location</th><td>${esc(j.l)}, India</td><th>Work mode</th><td>${j.m}</td></tr><tr><th>Type</th><td>${j.ty}</td><th>Experience</th><td>${j.exp}</td></tr><tr><th>Salary</th><td>${esc(j.sal)}</td><th>Openings</th><td>${j.op}</td></tr><tr><th>Posted</th><td>${j.d} days ago</td><th>Company HQ</th><td>${esc(c.h)}</td></tr></table>
+ <h4>Responsibilities</h4><ul class="rs">${j.r.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+ <h4>Required skills</h4><div>${j.s.map(k=>`<span class="tg ${my.has(k)?'own':'miss'}">${my.has(k)?'✓ ':''}${esc(k)}</span>`).join('')}</div>
+ <h4>Technologies</h4><div>${j.k.map(k=>`<span class="tg te">${esc(k)}</span>`).join('')}</div>
+ <h4>Why ${f.total}% for you</h4><div class="bd"><span>Skill match (${j.s.length-f.miss.length} of ${j.s.length} skills)</span><b>${f.base}%</b></div>
+ ${f.parts.map(p=>`<div class="bd"><span>${esc(p.l)}</span><b class="${p.d>0?'up':'dn'}">${p.d>0?'+':'−'}${Math.abs(p.d)}</b></div>`).join('')||'<div class="bd mu"><span>No memory adjustments yet</span><span></span></div>'}
+ <p class="mu sm" style="margin-top:6px">${f.miss.length?'Skill gap: '+f.miss.map(esc).join(', ')+'.':'You cover every required skill.'}</p>
+ <h4>What you remember about this</h4>${rel.length?rel.map(m=>`<div class="rc"><div class="rt">${pill(m.ty)}<span class="mu xs">${ago(m.ts)}</span></div><div class="sm">${esc(m.tx)}</div></div>`).join(''):'<p class="mu sm">Nothing related yet. Apply and log what happens.</p>'}
+ <div class="acts"><button class="b" data-a="${j.id}">${app?'Update status':'Apply & remember'}</button><a class="b s" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(j.co+' careers India')}">Find official careers page ↗</a></div>
+ <p class="mu xs" style="margin-top:12px">Sample vacancy for demonstration. Confirm details on the employer's official site.</p>`)}
+
+/* ---------- companies + market ---------- */
+function coUI(){const q=$('cq').value.toLowerCase(),s=$('cs').value,so=$('cso').value;
+ let a=CO.map((c,i)=>{const js=J.filter(j=>j.ci==i),ms=IDX.co.get(c.n)||[];return{c,i,js,op:js.reduce((x,j)=>x+j.op,0),ms,l:latest(ms)}}).filter(x=>(!q||x.c.n.toLowerCase().includes(q))&&(!s||x.c.s==s));
+ a.sort(so=='n'?(x,y)=>x.c.n.localeCompare(y.c.n):so=='m'?(x,y)=>y.ms.length-x.ms.length||y.op-x.op:(x,y)=>y.op-x.op);
+ $('cg').innerHTML=a.map(({c,i,js,op,ms,l})=>`<div class="card"><div style="display:flex;gap:12px;align-items:center">${mono(c.n)}<div><h3>${esc(c.n)}</h3><div class="mu sm">${esc(SEC[c.s])} · HQ ${esc(c.h)}</div></div></div>
+ <div class="mu sm">${esc(c.c.join(', '))}</div><div><b>${op.toLocaleString()} openings</b> <span class="mu sm">in ${js.length} roles</span></div>
+ ${l?`<div class="nt ${NEG.has(l.ty)?'bad':POS.has(l.ty)?'good':'n'}" style="margin:0">${LOOP}<div>${esc(l.ty)} ${ago(l.ts)}${ms.length>1?` · ${ms.length} memories`:''}</div></div>`:''}
+ <div><button class="b sm" data-co="${i}">View vacancies</button></div></div>`).join('')||'<div class="empty">No company found.</div>'}
+const bstate={};
+function bars(id,e,key,fmt){const all=bstate[id],show=all?e:e.slice(0,12),mx=e[0]?e[0][1]:1;
+ $(id).innerHTML=show.map(([n,v])=>`<button class="br" data-f="${key}:${esc(n)}"><div class="t"><b>${esc(key=='sec'?SEC[n]:n)}</b><span class="mu">${fmt?fmt(v):v.toLocaleString()+' openings'}</span></div><div class="bar"><i style="width:${100*v/mx}%"></i></div></button>`).join('')+(e.length>12?`<button class="b s sm" style="margin-top:6px" data-all="${id}">${all?'Show fewer':'Show all '+e.length}</button>`:'')}
+const cnt=f=>{const o={};J.forEach(j=>f(j).forEach(v=>o[v]=(o[v]||0)+j.op));return Object.entries(o).sort((a,b)=>b[1]-a[1])};
+function mktUI(){bars('mfam',cnt(j=>[j.f]),'fam');bars('msk',cnt(j=>j.s),'skill');bars('mte',cnt(j=>j.k),'tech');bars('mci',cnt(j=>[j.l]),'loc');bars('mse',cnt(j=>[j.sec]),'sec');
+ const p={};J.filter(j=>j.ty=='Full-time').forEach(j=>{(p[j.f]=p[j.f]||[]).push((j.lo+j.hi)/2)});
+ bars('mpay',Object.entries(p).map(([k,v])=>[k,v.reduce((a,b)=>a+b,0)/v.length]).sort((a,b)=>b[1]-a[1]),'fam',v=>'₹'+v.toFixed(1)+' LPA');
+ const md={Remote:0,Hybrid:0,'On-site':0};J.forEach(j=>md[j.m]+=j.op);const tot=OPEN,col={Remote:'var(--pr)',Hybrid:'var(--hs)','On-site':'var(--mu)'};
+ $('mmode').innerHTML=`<div class="stk">${Object.entries(md).map(([k,v])=>`<i style="width:${100*v/tot}%;background:${col[k]}" title="${k}"></i>`).join('')}</div><div class="chips">${Object.entries(md).map(([k,v])=>`<span class="sm"><span class="pill" style="--tc:${col[k]}">${k}</span> ${Math.round(100*v/tot)}%</span>`).join('')}</div>`}
+
+/* ---------- memory page ---------- */
+function retPrev(){const e=extract($('mx').value),a=[...e.co.map(x=>['co',x]),...e.sk.map(x=>['sk',x]),...e.ro.map(x=>['ro',x]),...e.ci.map(x=>['ci',x])];
+ $('det').innerHTML=a.length?`<span class="mu sm" style="align-self:center">Detected:</span>`+a.map(([k,x])=>`<span class="tg k-${k}">${esc(x)}</span>`).join(''):'<span class="mu sm">Mention companies, skills or roles and they are tagged automatically.</span>'}
+const TPL=[['Rejected','Rejected by  after the technical round. They wanted '],['Interview','Interview at  went well. Questions on '],['Ghosted','No reply from  after '],['Offer','Offer from  for the  role'],['Insight','Next time, lead with  in the first two minutes']];
+const todayStr=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const tsFromDate=s=>{if(!s||s==todayStr())return Date.now();const t=new Date(s+'T12:00:00').getTime();return isNaN(t)?Date.now():Math.min(t,Date.now())};
+const dateFromTs=ts=>{const d=new Date(ts);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+function tlUI(){const all=[...M].sort((a,b)=>b.ts-a.ts),cs={All:M.length};TYPES.forEach(t=>cs[t]=M.filter(m=>m.ty==t).length);
+ $('tlf').innerHTML=['All',...TYPES].map(t=>`<button class="chip" data-tf="${t}" aria-pressed="${tlF==t}">${t} <span class="mu">${cs[t]}</span></button>`).join('');
+ const r=all.filter(m=>tlF=='All'||m.ty==tlF);
+ $('tl').innerHTML=r.slice(0,tlLim).map(m=>`<div class="ev t-${m.ty}"><div class="eh">${pill(m.ty)}<span class="mu xs" title="${new Date(m.ts).toDateString()}">${ago(m.ts)}</span><span class="ea"><button class="b g sm" data-edit="${m.id}">Edit</button><button class="b g sm" data-del="${m.id}">Delete</button></span></div><p>${esc(m.tx)}</p><div style="margin-top:4px">${allEnt(m.e).map(x=>`<span class="tg te">${esc(x)}</span>`).join('')}</div></div>`).join('')||'<div class="empty" style="margin-left:-24px">No memories here yet. Use Retain above to add one.</div>';
+ $('tlmore').style.display=r.length>tlLim?'inline-flex':'none'}
+function pipeUI(){PLc=pipeline();const c={};TYPES.slice(0,5).forEach(t=>c[t]=0);PLc.forEach(p=>c[p.ty]++);
+ $('pipe').innerHTML=`<div class="fnl">${TYPES.slice(0,5).map(t=>`<div class="t-${t}"><b>${c[t]}</b><span>${t}</span></div>`).join('')}</div>`+(PLc.length?PLc.slice(0,8).map((p,i)=>`<div class="ap"><div><b>${esc(p.label)}</b><div class="mu xs">${pill(p.ty)} · ${ago(p.ts)}${p.ty=='Applied'&&Date.now()-p.ts>=7*DAY?' · follow up?':''}</div></div><button class="b s sm" data-upd="${i}">Update</button></div>`).join('')+(PLc.length>8?`<p class="mu xs" style="margin-top:8px">Showing the 8 most recent of ${PLc.length}.</p>`:''):'<div class="empty">No applications tracked yet. Use “Apply & remember” on any vacancy.</div>')}
+function reflUI(){const{cards}=reflect(),nx=bestNext(3);
+ $('ref').innerHTML=cards.map(c=>`<div class="rf ${c.tone}"><b class="h">${esc(c.title)}</b>${esc(c.body)}${c.acts.length?`<div class="ba">${c.acts.map(a=>a.f?`<button class="b sm s" data-f="${esc(a.f)}">${esc(a.l)}</button>`:`<button class="b sm s" data-learn="${esc(a.learn)}">${esc(a.l)}</button>`).join('')}</div>`:''}</div>`).join('')+
+ (nx.length?`<h4>Try these next</h4>${nx.map(j=>{const f=fit(j);return`<div class="nx">${ring(f.total)}<div><b>${esc(j.t)}</b><div class="mu xs">${esc(j.co)} · ${esc(j.l)}</div></div><button class="b sm s" data-v="${j.id}">Details</button></div>`}).join('')}`:'')}
+function dataUI(){$('sto').textContent=store.persistent()?`${M.length} memories saved in this browser. Nothing is sent anywhere.`:`Browser storage is unavailable here, so memories last until you close this tab. Use Export to keep a copy.`}
+function memUI(){$('mt').innerHTML=TYPES.map(t=>`<option>${t}</option>`).join('');if(!editing){$('md2').value=todayStr()}$('md2').max=todayStr();
+ $('tpl').innerHTML=TPL.map(([t,x],i)=>`<button class="chip" data-tpl="${i}">${t}</button>`).join('');
+ $('rex').innerHTML=['Why was I rejected?','What went well?','Java','TCS','last 7 days','Who ghosted me?'].map(x=>`<button class="chip" data-rq="${esc(x)}">${esc(x)}</button>`).join('');
+ retPrev();tlUI();pipeUI();reflUI();dataUI()}
+function doRecall(){const q=$('rq').value,r=recall(q);
+ if(r.empty){$('rout').innerHTML=`<div class="mu sm">Showing your latest memories. Ask something above to search.</div>`+[...M].sort((a,b)=>b.ts-a.ts).slice(0,4).map(m=>`<div class="rc"><div class="rt">${pill(m.ty)}<span class="mu xs">${ago(m.ts)}</span></div><div class="sm">${esc(m.tx)}</div></div>`).join('');return}
+ if(!r.items.length){$('rout').innerHTML=`<div class="empty">Nothing in memory matches “${esc(q)}”${r.P.note?' in '+r.P.note:''}.<br><span class="sm">Try a company, a skill or a word like rejected or interview.</span></div>`;return}
+ $('rout').innerHTML=`<div class="sum">${esc(r.summary)}</div>`+r.items.map(x=>`<div class="rc"><div class="rt">${pill(x.m.ty)}<span class="mu xs">${ago(x.m.ts)} · ${x.rel}% relevant</span></div><div class="sm">${hl(x.m.tx,r.P.words)}</div><div class="bar" style="height:4px;margin:8px 0 6px"><i style="width:${x.rel}%"></i></div><div class="xs mu">${x.why.length?'Matched: '+esc(x.why.join(', ')):'Matched on recency'}</div></div>`).join('')+(r.acts.length?`<div class="ba" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">${r.acts.map(a=>`<button class="b sm s" data-f="${esc(a.f)}">${esc(a.l)}</button>`).join('')}</div>`:'')}
+
+/* ---------- actions ---------- */
+function refresh(){FC.clear();render();briefUI();if(cur=='mem'){tlUI();pipeUI();reflUI();dataUI();retPrev()}if(cur=='cos')coUI()}
+function applyJob(id){const j=J[id],f=fit(j);if(f.app){openUpd('j'+id);return}
+ retain('Applied',`Applied to ${j.t} at ${j.co}`,{job:id});closeModal();refresh();toast(`Applied to ${j.co}. Saved to memory.`)}
+function openUpd(key){let e=pipeline().find(p=>p.key==key);if(!e)return;updEntry=e;
+ openModal(`<h2 id="mtl">Update status</h2><p class="mu" style="margin:4px 0 12px">${esc(e.label)}. Currently ${pill(e.ty)}</p>
+ <div class="fld"><label class="f" for="us">New status</label><select class="in" id="us">${TYPES.slice(0,5).map(t=>`<option ${t==e.ty?'selected':''}>${t}</option>`).join('')}</select></div>
+ <div class="fld"><label class="f" for="un">What happened? (optional)</label><textarea class="in" id="un" rows="3" placeholder="e.g. They asked about Java and system design"></textarea></div>
+ <p class="mu xs" style="margin-bottom:10px">Skills you mention here feed the Reflect insights and future fit scores.</p><div class="acts"><button class="b" data-saveupd>Save update</button><button class="b g" data-close>Cancel</button></div>`)}
+function saveUpd(){const e=updEntry;if(!e)return;const ty=$('us').value,n=$('un').value.trim();
+ retain(ty,`${ty}: ${e.label}${n?'. '+n:''}`,{job:e.job});closeModal();refresh();toast(`Status updated to ${ty}`)}
+function nav(p,noTop){cur=p;document.querySelectorAll('.pg').forEach(x=>x.classList.toggle('on',x.id=='pg-'+p));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.p==p));
+ if(p=='mem')memUI();if(p=='cos')coUI();if(p=='mkt')mktUI();if(!noTop)window.scrollTo(0,0)}
+function clearFilters(){['q','fco','fsk','fte','loc','sec','mode','exp','typ','sal'].forEach(i=>$(i).value='');F.fam='';$('filters').classList.remove('open')}
+function goJobs(k,v){clearFilters();const m={loc:'loc',skill:'fsk',tech:'fte',company:'fco',sec:'sec',q:'q'};if(k=='fam')F.fam=v;else if(m[k])$(m[k]).value=v;lim=PAGE;closeModal();nav('jobs',true);famUI();render();$('res').scrollIntoView({behavior:'smooth',block:'start'})}
+function learn(s){if(!SK.includes(s))return;my.add(s);setSkills([...my]);skillsUI();refresh();toast(`${s} added to your skills`)}
+function saveMem(){const tx=$('mx').value.trim();if(tx.length<3){toast('Write a few words about what happened');$('mx').focus();return}
+ const ts=tsFromDate($('md2').value),ty=$('mt').value;
+ if(editing){amend(editing,ty,tx,ts);editing=null;toast('Memory updated')}else{retain(ty,tx,{ts});toast('Memory retained')}
+ $('mx').value='';$('rt').textContent='Retain memory';$('rcancel').style.display='none';$('rtitle').textContent='Retain';$('md2').value=todayStr();refresh();if($('rq').value.trim())doRecall()}
+function cancelEdit(){editing=null;$('mx').value='';$('rt').textContent='Retain memory';$('rcancel').style.display='none';$('rtitle').textContent='Retain';$('md2').value=todayStr();retPrev()}
+function exportUI(){const data=JSON.stringify({skills:[...my],memories:M.map(({id,ty,tx,ts,job})=>({id,ty,tx,ts,job}))},null,1);
+ openModal(`<h2 id="mtl">Export or import</h2><p class="mu sm" style="margin:4px 0 10px">Copy this text to back up your memories. To restore, paste a backup here and choose Import. Importing replaces what you have now.</p><textarea class="in" id="jx" rows="10" style="font-family:ui-monospace,Consolas,monospace;font-size:12px">${esc(data)}</textarea><div class="acts"><button class="b" data-copy>Copy</button><button class="b s" data-import>Import from text</button></div>`)}
+function doImport(){try{const d=JSON.parse($('jx').value),arr=Array.isArray(d)?d:d.memories;if(!Array.isArray(arr))throw 0;
+ const ok=arr.filter(m=>m&&TYPES.includes(m.ty)&&typeof m.tx=='string'&&m.tx.trim()&&typeof m.ts=='number');if(!ok.length&&arr.length)throw 0;
+ store.set('hh3_mem',ok.map(m=>({id:m.id||uid(),ty:m.ty,tx:m.tx,ts:m.ts,job:Number.isInteger(m.job)&&J[m.job]?m.job:undefined})));loadMemory();if(d.skills&&Array.isArray(d.skills))setSkills(d.skills.filter(s=>SK.includes(s)));reindex();persist();closeModal();skillsUI();refresh();toast(`Imported ${M.length} memories`)}catch(e){toast('That text is not a valid backup')}}
+
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-p],[data-s],[data-a],[data-v],[data-f],[data-co],[data-fam],[data-close],[data-preset],[data-learn],[data-q],[data-tf],[data-tpl],[data-rq],[data-edit],[data-del],[data-upd],[data-saveupd],[data-all],[data-copy],[data-import]');
+ if(!t){if(e.target.id=='md')closeModal();return}const d=t.dataset;
+ if(d.p)nav(d.p);
+ else if(d.s!==undefined){my.has(d.s)?my.delete(d.s):my.add(d.s);setSkills([...my]);skillsUI();refresh()}
+ else if(d.preset){setSkills(PRESETS[d.preset]);skillsUI();refresh();toast(`Skills set to the ${d.preset} profile`)}
+ else if(d.a!==undefined)applyJob(+d.a);
+ else if(d.v!==undefined)spec(J[+d.v]);
+ else if(d.f){const i=d.f.indexOf(':');goJobs(d.f.slice(0,i),d.f.slice(i+1))}
+ else if(d.co!==undefined)goJobs('company',CO[+d.co].n);
+ else if(d.fam!==undefined){F.fam=d.fam;lim=PAGE;famUI();render()}
+ else if(d.q){$('q').value=d.q;lim=PAGE;render()}
+ else if('close' in d)closeModal();
+ else if(d.learn)learn(d.learn);
+ else if(d.tf){tlF=d.tf;tlLim=12;tlUI()}
+ else if(d.tpl!==undefined){const[ty,x]=TPL[+d.tpl];$('mt').value=ty;$('mx').value=x;$('mx').focus();const p=x.indexOf('  ');$('mx').setSelectionRange(p>=0?p+1:x.length,p>=0?p+1:x.length);retPrev()}
+ else if(d.rq){$('rq').value=d.rq;doRecall()}
+ else if(d.edit){const m=M.find(x=>x.id==+d.edit);if(!m)return;editing=m.id;$('mt').value=m.ty;$('mx').value=m.tx;$('md2').value=dateFromTs(m.ts);$('rt').textContent='Save changes';$('rcancel').style.display='inline-flex';$('rtitle').textContent='Edit memory';retPrev();$('c-ret').scrollIntoView({behavior:'smooth',block:'center'});$('mx').focus()}
+ else if(d.del){if(t.dataset.armed){forget(+d.del);refresh();toast('Memory deleted')}else{t.dataset.armed='1';t.textContent='Confirm?';t.classList.add('dg');setTimeout(()=>{if(t.isConnected){delete t.dataset.armed;t.textContent='Delete';t.classList.remove('dg')}},3000)}}
+ else if(d.upd!==undefined){const p=PLc[+d.upd];if(p)openUpd(p.key)}
+ else if('saveupd' in d)saveUpd();
+ else if(d.all){bstate[d.all]=!bstate[d.all];mktUI()}
+ else if('copy' in d){const x=$('jx');x.select();(navigator.clipboard?navigator.clipboard.writeText(x.value):Promise.reject()).then(()=>toast('Copied to clipboard'),()=>{try{document.execCommand('copy');toast('Copied')}catch(err){toast('Select the text and copy it manually')}})}
+ else if('import' in d)doImport()});
+document.addEventListener('keydown',e=>{if(e.key=='Escape'&&$('md').classList.contains('on'))closeModal()});
+$('more').onclick=()=>{lim+=PAGE;render()};$('clr').onclick=()=>{clearFilters();lim=PAGE;famUI();render()};
+$('list').addEventListener('click',e=>{if(e.target.id=='clr2'){clearFilters();lim=PAGE;famUI();render()}});
+$('fbtn').onclick=()=>$('filters').classList.toggle('open');
+$('rt').onclick=saveMem;$('rcancel').onclick=cancelEdit;$('mx').addEventListener('input',retPrev);
+$('mx').addEventListener('keydown',e=>{if(e.key=='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();saveMem()}});
+$('rc').onclick=doRecall;$('rq').addEventListener('keydown',e=>{if(e.key=='Enter')doRecall()});
+$('tlmore').onclick=()=>{tlLim+=12;tlUI()};
+$('exp2').onclick=exportUI;
+$('rst').onclick=function(){if(this.dataset.armed){delete this.dataset.armed;this.textContent='Reset demo data';store.set('hh3_mem',seed());loadMemory();setSkills(DEFAULT_SKILLS);reindex();persist();skillsUI();refresh();toast('Demo data restored')}else{this.dataset.armed='1';this.textContent='Tap again to confirm';setTimeout(()=>{delete this.dataset.armed;this.textContent='Reset demo data'},3000)}};
+$('clrm').onclick=function(){if(this.dataset.armed){delete this.dataset.armed;this.textContent='Delete all memories';M=[];persist();reindex();refresh();toast('All memories deleted')}else{this.dataset.armed='1';this.textContent='Tap again to confirm';setTimeout(()=>{delete this.dataset.armed;this.textContent='Delete all memories'},3000)}};
+let dt;['q','fco','fsk','fte','loc','sec','mode','exp','typ','sal','sort'].forEach(i=>$(i).addEventListener('input',()=>{clearTimeout(dt);lim=PAGE;dt=setTimeout(render,120)}));
+$('sks').addEventListener('input',skillsUI);['cq','cs','cso'].forEach(i=>$(i).addEventListener('input',coUI));
+$('th').onclick=()=>{const r=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches,n=(r.dataset.theme||(dk?'dark':'light'))=='dark'?'light':'dark';r.dataset.theme=n;store.set('hh3_theme',n)};
+
+/* ---------- boot ---------- */
+(function boot(){const th=store.get('hh3_theme',null);if(th)document.documentElement.dataset.theme=th;
+ CITIES.forEach(l=>$('loc').add(new Option(l,l)));Object.entries(SEC).forEach(([k,v])=>{$('sec').add(new Option(v,k));$('cs').add(new Option(v,k))});
+ $('qk').innerHTML=['Data Analyst','Software Engineer','Product Manager','DevOps','Finance Analyst','HR','Mechanical','Clinical Research'].map(x=>`<button data-q="${x}">${x}</button>`).join('');
+ $('conote').textContent=`${CO.length} major Indian employers across ${Object.keys(SEC).length} sectors. India has millions of registered companies, so this is a curated directory, not a full register.`;
+ $('foot').textContent=`Data note: the company directory lists ${CO.length} major Indian employers. Vacancies, openings, salaries and dates are generated sample data for demonstration. Always confirm on the employer's official careers page. Recall and reflect use on-device keyword, entity and recency scoring, with no external AI service.`;
+ $('md2').value=todayStr();loadMemory();reindex();statsUI();presetUI();skillsUI();famUI();PLc=pipeline();briefUI();render()})();
+</script>
+</body>
+</html>
